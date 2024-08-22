@@ -69,9 +69,8 @@ def run_camera():
 
     video_counter_str = add_zeros_to_number(video_counter, 3)
 
-    output = f"{FILENAME_PREFIX}-[{timestamp}]-{video_counter_str}.h264"
-    mp4_output = f"{FILENAME_PREFIX}-[{timestamp}]-{video_counter_str}.mp4"
-    print(f"OUTPUT IS {output}")
+    output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].h264"
+    mp4_output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].mp4"
 
     picam2.start_recording(encoder, output)
     sleep(CAMERA_SLEEP_TIME)
