@@ -1,7 +1,3 @@
-TIME_BETWEEN_VIDEOS = 5
-
-LOG_DIRECTORY_PATH = "/home/pidgey/printer_camera/logs"
-
 ##############################
 ##############################
 #####                    #####
@@ -13,18 +9,25 @@ LOG_DIRECTORY_PATH = "/home/pidgey/printer_camera/logs"
 
 FILENAME_PREFIX = "print"
 
-DIRECTORY_NAME_PREFIX = "print"
-
-SAVE_DIRECTORY_PATH = "/home/pidgey/printer_camera/recordings/"
+TIME_BETWEEN_VIDEOS = 5
 
 CAMERA_SLEEP_TIME = 6
 
+DIRECTORY_NAME_PREFIX = FILENAME_PREFIX
 
-    # Convert H264 to MP4
-    #conversion_command = f"ffmpeg -i {output} -c copy {mp4_output}"
-    #os.system(conversion_command)
+SAVE_DIRECTORY_PATH = "/home/pidgey/printer_camera/recordings/"
 
-    # Delete the original H264 file after conversion
-    #os.remove(output)
+
 
     #https://datasheets.raspberrypi.com/camera/picamera2-manual.pdf
+
+
+##############################
+##############################
+#####                    #####
+#####        LOGS        #####
+#####                    #####
+##############################
+##############################
+
+LOG_DIRECTORY_PATH = "/home/pidgey/printer_camera/logs"
