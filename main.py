@@ -33,7 +33,7 @@ def add_zeros_to_number(num, amt):
     else:
         return num_str
 
-def console_and_log(message="Error with what got passed to console_and_log()"):
+def console_and_log(message):
     print(message)
     write_to_log(message)
 
@@ -49,19 +49,14 @@ def setup_pins():
     GPIO.output(LIGHT_2_PIN, GPIO.LOW)
 
 def set_up_folder():
-    console_and_log("Entering set_up_folder")
     global recordings_path_str
     folder_time = datetime.now().strftime("%m.%d.%Y")
 
-    console_and_log("Setting recordings_path_str")
     recordings_path_str = f"{SAVE_DIRECTORY_PATH}{DIRECTORY_NAME_PREFIX}{folder_time}"
-    console_and_log(recordings_path_str)
     
     if os.path.isdir(recordings_path_str) ==  False:
-        console_and_log("Not a directory!")
         os.mkdir(recordings_path_str)
 
-    console_and_log("Changing directory")
     os.chdir(recordings_path_str)
 
 def run_camera():
@@ -87,7 +82,7 @@ def run_camera():
     conversion_command = f"ffmpeg -i {output} -c copy {mp4_output}"
     os.system(conversion_command)
 
-    # Optionally, delete the original H264 file after conversion
+    # Delete the original H264 file after conversion
     os.remove(output)
 
     video_counter = video_counter + 1
