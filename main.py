@@ -67,6 +67,7 @@ def run_camera():
     print(f"THIS IS THE COUNTER: {video_counter_str}")
 
     output = FILENAME_PREFIX + "_" + timestamp + ".h264"
+    mp4_output = FILENAME_PREFIX + "_" + timestamp + ".mp4"
     #output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].h264"
     #mp4_output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].mp4"
 
@@ -84,11 +85,11 @@ def run_camera():
     video_counter = video_counter + 1
 
     # Convert H264 to MP4
-    #conversion_command = f"ffmpeg -i {output} -c copy {mp4_output}"
-    #os.system(conversion_command)
+    conversion_command = f"ffmpeg -i {output} -c copy {mp4_output}"
+    os.system(conversion_command)
 
     # Delete the original H264 file after conversion
-    #os.remove(output)
+    os.remove(output)
 
     print(f"Recorded {output}")
     switch_lights(False)
