@@ -107,6 +107,8 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         print("Program terminated with ctrl+c")
+        GPIO.cleanup()
+        
     except Exception as e:
         print("Error")
         print(e)
