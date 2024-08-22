@@ -8,7 +8,7 @@ from logger import write_to_log
 
 from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_SLEEP_TIME
 
-LIGHT_1_PIN = 26
+LIGHT_1_PIN = 6
 LIGHT_2_PIN = 13
 
 video_counter = 0
@@ -75,6 +75,7 @@ def run_camera():
     video_counter_str = add_zeros_to_number(video_counter, 3)
 
     output = f"{FILENAME_PREFIX}-[{timestamp}]-{video_counter_str}.h264"
+    mp4_output = f"{FILENAME_PREFIX}-[{timestamp}]-{video_counter_str}.mp4"
     print(f"OUTPUT IS {output}")
 
     picam2.start_recording(encoder, output)
@@ -82,8 +83,12 @@ def run_camera():
     
     picam2.stop_recording()
 
-    clean_output = output.strip("'")
-    os.rename(output, clean_output)
+    # Convert H264 to MP4
+    conversion_command = f"ffmpeg -i {h264_output} -c copy {mp4_output}"
+    os.system(conversion_command)
+
+    # Optionally, delete the original H264 file after conversion
+    os.remove(h264_output)
 
     video_counter = video_counter + 1
 
