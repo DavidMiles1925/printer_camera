@@ -17,7 +17,7 @@ recordings_path_str = "none"
 picam2 = Picamera2()
 video_config = picam2.create_video_configuration()
 picam2.configure(video_config)
-encoder = H264Encoder(bitrate=1800)
+encoder = H264Encoder(bitrate=1000000)
 
 # Adds zeros to the video number in the filename.
 #   - This was done to ensure videos stayed in chronological
@@ -31,10 +31,6 @@ def add_zeros_to_number(num, amt):
         return '0' * num_zeros + num_str
     else:
         return num_str
-
-def console_and_log(message):
-    print(message)
-    write_to_log(message)
 
 def setup_pins():
     GPIO.setmode(GPIO.BCM)
@@ -62,34 +58,34 @@ def run_camera():
     switch_lights(True)
     global video_counter
 
-    print("Camera Running")
-
     timestamp = datetime.now().strftime("%H.%M.%S")
 
-    console_and_log(f"THIS IS THE TIMESTAMP: {timestamp}")
+    print(f"THIS IS THE TIMESTAMP: {timestamp}")
 
     video_counter_str = add_zeros_to_number(video_counter, 3)
 
-    console_and_log(f"THIS IS THE COUNTER: {video_counter_str}")
+    print(f"THIS IS THE COUNTER: {video_counter_str}")
 
     output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].h264"
     #mp4_output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].mp4"
 
-    console_and_log(f"THIS IS OUTPUT: {output}")
+    print(f"THIS IS OUTPUT: {output}")
 
+    print("Camera Running")
     picam2.start_recording(encoder, output)
-    console_and_log(f"ENCODER {encoder}")
-    console_and_log(f"OUTPUT {output}")
+    print(f"ENCODER {encoder}")
+    print(f"OUTPUT {output}")
     sleep(CAMERA_SLEEP_TIME)
     
     picam2.stop_recording()
-    console_and_log("STOPPED RECORDING")
+    print("STOPPED RECORDING")
 
 
     video_counter = video_counter + 1
 
-    console_and_log(f"Recorded {output}")
+    print(f"Recorded {output}")
     switch_lights(False)
+    write_to_log(f"Camera Off: Recorded {output}")
 
 def switch_lights(light):
     if light == True:
@@ -102,18 +98,21 @@ def switch_lights(light):
 
 if __name__ == "__main__":
     try:
-        console_and_log("Program Started")
-        set_up_folder()
+        print("Program Started")
+        write_to_log("Program Started")
         setup_pins()
         
         while True:
+            write_to_log("Running Camera")
+            set_up_folder()
             run_camera()
             sleep(TIME_BETWEEN_VIDEOS)
 
     except KeyboardInterrupt:
         print("Program terminated with ctrl+c")
+        write_to_log("Program terminated with ctrl+c")
         GPIO.cleanup()
 
     except Exception as e:
-        print("Error")
-        print(e)
+        write_to_log(f"Error: {e}")
+        print(f"Error: {e}")
