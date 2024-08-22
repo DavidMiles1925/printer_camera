@@ -82,9 +82,12 @@ def run_camera():
     
     picam2.stop_recording()
 
+    clean_output = output.strip("'")
+    os.rename(output, clean_output)
+
     video_counter = video_counter + 1
 
-    console_and_log(f"Recorded {output}")
+    console_and_log(f"Recorded {clean_output}")
     switch_lights(False)
 
 def switch_lights(light):
