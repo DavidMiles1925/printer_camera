@@ -14,6 +14,11 @@ LIGHT_2_PIN = 13
 video_counter = 0
 recordings_path_str = "none"
 
+picam2 = Picamera2()
+video_config = picam2.create_video_configuration()
+picam2.configure(video_config)
+encoder = H264Encoder(bitrate=1000000)
+
 # Adds zeros to the video number in the filename.
 #   - This was done to ensure videos stayed in chronological
 #     order, even when displayed alphabetically.
@@ -54,12 +59,6 @@ def set_up_folder():
     os.chdir(recordings_path_str)
 
 def run_camera():
-
-    picam2 = Picamera2()
-    video_config = picam2.create_video_configuration()
-    picam2.configure(video_config)
-    encoder = H264Encoder(bitrate=1000000)
-
     switch_lights(True)
     global video_counter
 
