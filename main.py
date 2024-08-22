@@ -85,7 +85,6 @@ def run_camera():
     console_and_log(f"Recorded {output}")
 
 if __name__ == "__main__":
-    try:
         console_and_log("Program Started")
         set_up_folder()
         setup_pins()
@@ -93,10 +92,3 @@ if __name__ == "__main__":
         while True:
             run_camera()
             sleep(TIME_BETWEEN_VIDEOS)
-    '''
-    except KeyboardInterrupt:
-        print("Program terminated with ctrl+c")
-    except Exception as e:
-        print("Error")
-        print(e)
-    '''
