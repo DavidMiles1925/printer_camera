@@ -66,7 +66,8 @@ def run_camera():
 
     print(f"THIS IS THE COUNTER: {video_counter_str}")
 
-    output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].h264"
+    output = timestamp + ".h264"
+    #output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].h264"
     #mp4_output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].mp4"
 
     print(f"THIS IS OUTPUT: {output}")
