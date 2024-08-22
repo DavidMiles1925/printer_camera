@@ -55,7 +55,7 @@ def set_up_folder():
 
     console_and_log("Setting recordings_path_str")
     recordings_path_str = f"{SAVE_DIRECTORY_PATH}{DIRECTORY_NAME_PREFIX}{folder_time}"
-    console_and_log("Path is ", recordings_path_str)
+    console_and_log(recordings_path_str)
     
     if os.path.isdir(recordings_path_str) ==  False:
         os.mkdir(recordings_path_str)
