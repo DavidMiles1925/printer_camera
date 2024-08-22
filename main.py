@@ -12,7 +12,7 @@ LIGHT_1_PIN = 6
 LIGHT_2_PIN = 13
 
 video_counter = 0
-recordings_path_str = ""
+recordings_path_str = "none"
 
 picam2 = Picamera2()
 video_config = picam2.create_video_configuration()
@@ -70,7 +70,7 @@ def run_camera():
 
     print("Camera Running")
 
-    timestamp = datetime.now().strftime("%H.%M")
+    timestamp = datetime.now().strftime("%H.%M.%S")
 
     video_counter_str = add_zeros_to_number(video_counter, 3)
 
