@@ -84,15 +84,15 @@ def run_camera():
     picam2.stop_recording()
 
     # Convert H264 to MP4
-    conversion_command = f"ffmpeg -i {h264_output} -c copy {mp4_output}"
+    conversion_command = f"ffmpeg -i {output} -c copy {mp4_output}"
     os.system(conversion_command)
 
     # Optionally, delete the original H264 file after conversion
-    os.remove(h264_output)
+    os.remove(output)
 
     video_counter = video_counter + 1
 
-    console_and_log(f"Recorded {clean_output}")
+    console_and_log(f"Recorded {mp4_output}")
     switch_lights(False)
 
 def switch_lights(light):
