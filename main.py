@@ -65,6 +65,7 @@ def set_up_folder():
     os.chdir(recordings_path_str)
 
 def run_camera():
+    switch_lights(True)
     global video_counter
 
     print("Camera Running")
@@ -83,6 +84,16 @@ def run_camera():
     video_counter = video_counter + 1
 
     console_and_log(f"Recorded {output}")
+    switch_lights(False)
+
+def switch_lights(light):
+    if light == True:
+        GPIO.output(LIGHT_1_PIN, GPIO.HIGH)
+        GPIO.output(LIGHT_2_PIN, GPIO.HIGH)
+
+    if light == False:
+        GPIO.output(LIGHT_1_PIN, GPIO.LOW)
+        GPIO.output(LIGHT_2_PIN, GPIO.LOW)
 
 if __name__ == "__main__":
     try:
