@@ -75,7 +75,7 @@ def run_camera():
 
     switch_lights(False)
 
-    video_counter = video_counter + 1
+    print(f"Recorded {output}\nConverting to MP4...")
 
     # Convert H264 to MP4
     conversion_command = f"ffmpeg -i {output} -c copy {mp4_output}"
@@ -83,6 +83,8 @@ def run_camera():
 
     # Delete the original H264 file after conversion
     os.remove(output)
+
+    video_counter = video_counter + 1
 
     print(f"Recorded {mp4_output}")
     write_to_log(f"Camera Off: Recorded {mp4_output}")
