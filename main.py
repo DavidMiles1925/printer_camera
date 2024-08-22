@@ -86,7 +86,7 @@ def run_camera():
 
     video_counter = video_counter + 1
 
-    console_and_log(f"Recorded {mp4_output}")
+    console_and_log(f"Recorded {output}")
     switch_lights(False)
 
 def switch_lights(light):
