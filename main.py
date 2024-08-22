@@ -58,6 +58,7 @@ def set_up_folder():
     console_and_log(recordings_path_str)
     
     if os.path.isdir(recordings_path_str) ==  False:
+        console_and_log("Not a directory!")
         os.mkdir(recordings_path_str)
 
     console_and_log("Changing directory")
