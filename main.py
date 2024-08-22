@@ -60,27 +60,18 @@ def run_camera():
 
     timestamp = datetime.now().strftime("%H.%M.%S")
 
-    print(f"THIS IS THE TIMESTAMP: {timestamp}")
-
     video_counter_str = add_zeros_to_number(video_counter, 3)
 
-    print(f"THIS IS THE COUNTER: {video_counter_str}")
-
     output = FILENAME_PREFIX + "_" + timestamp + ".h264"
-    mp4_output = FILENAME_PREFIX + "_" + timestamp + ".mp4"
-    #output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].h264"
-    #mp4_output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].mp4"
-
-    print(f"THIS IS OUTPUT: {output}")
+    mp4_output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].mp4"
 
     print("Camera Running")
+
     picam2.start_recording(encoder, output)
-    print(f"ENCODER {encoder}")
-    print(f"OUTPUT {output}")
+
     sleep(CAMERA_SLEEP_TIME)
     
     picam2.stop_recording()
-    print("STOPPED RECORDING")
 
     video_counter = video_counter + 1
 
@@ -91,9 +82,11 @@ def run_camera():
     # Delete the original H264 file after conversion
     os.remove(output)
 
-    print(f"Recorded {output}")
+    print(f"Recorded {mp4_output}")
+    write_to_log(f"Camera Off: Recorded {mp4_output}")
+    
     switch_lights(False)
-    write_to_log(f"Camera Off: Recorded {output}")
+    
 
 def switch_lights(light):
     if light == True:
