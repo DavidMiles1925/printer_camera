@@ -75,6 +75,7 @@ def run_camera():
     video_counter_str = add_zeros_to_number(video_counter, 3)
 
     output = f"{FILENAME_PREFIX}-[{timestamp}]-{video_counter_str}.h264"
+    print(f"OUTPUT IS {output}")
 
     picam2.start_recording(encoder, output)
     sleep(CAMERA_SLEEP_TIME)
@@ -108,7 +109,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("Program terminated with ctrl+c")
         GPIO.cleanup()
-        
+
     except Exception as e:
         print("Error")
         print(e)
