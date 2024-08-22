@@ -17,6 +17,8 @@ DIRECTORY_NAME_PREFIX = FILENAME_PREFIX
 
 SAVE_DIRECTORY_PATH = "/home/pidgey/printer_camera/recordings/"
 
+LIGHTING_ON = True
+
 
 
     #https://datasheets.raspberrypi.com/camera/picamera2-manual.pdf

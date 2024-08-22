@@ -6,7 +6,7 @@ from picamera2 import Picamera2
 from time import sleep
 from logger import write_to_log
 
-from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_SLEEP_TIME
+from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_SLEEP_TIME, LIGHTING_ON
 
 LIGHT_1_PIN = 6
 LIGHT_2_PIN = 13
@@ -90,13 +90,14 @@ def run_camera():
     
 
 def switch_lights(light):
-    if light == True:
-        GPIO.output(LIGHT_1_PIN, GPIO.HIGH)
-        GPIO.output(LIGHT_2_PIN, GPIO.HIGH)
+    if LIGHTING_ON == True:
+        if light == True:
+            GPIO.output(LIGHT_1_PIN, GPIO.HIGH)
+            GPIO.output(LIGHT_2_PIN, GPIO.HIGH)
 
-    if light == False:
-        GPIO.output(LIGHT_1_PIN, GPIO.LOW)
-        GPIO.output(LIGHT_2_PIN, GPIO.LOW)
+        if light == False:
+            GPIO.output(LIGHT_1_PIN, GPIO.LOW)
+            GPIO.output(LIGHT_2_PIN, GPIO.LOW)
 
 if __name__ == "__main__":
     try:
