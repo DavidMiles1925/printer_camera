@@ -93,9 +93,10 @@ if __name__ == "__main__":
         while True:
             run_camera()
             sleep(TIME_BETWEEN_VIDEOS)
-
+'''
     except KeyboardInterrupt:
         print("Program terminated with ctrl+c")
     except Exception as e:
         print("Error")
         print(e)
+        '''
