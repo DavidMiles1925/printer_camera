@@ -17,7 +17,7 @@ recordings_path_str = "none"
 picam2 = Picamera2()
 video_config = picam2.create_video_configuration()
 picam2.configure(video_config)
-encoder = H264Encoder(bitrate=1000000)
+encoder = H264Encoder(bitrate=1800)
 
 # Adds zeros to the video number in the filename.
 #   - This was done to ensure videos stayed in chronological
@@ -66,23 +66,25 @@ def run_camera():
 
     timestamp = datetime.now().strftime("%H.%M.%S")
 
+    console_and_log(f"THIS IS THE TIMESTAMP: {timestamp}")
+
     video_counter_str = add_zeros_to_number(video_counter, 3)
 
+    console_and_log(f"THIS IS THE COUNTER: {video_counter_str}")
+
     output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].h264"
-    mp4_output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].mp4"
+    #mp4_output = f"{video_counter_str}-{FILENAME_PREFIX}-[{timestamp}].mp4"
+
+    console_and_log(f"THIS IS OUTPUT: {output}")
 
     picam2.start_recording(encoder, output)
+    console_and_log(f"ENCODER {encoder}")
+    console_and_log(f"OUTPUT {output}")
     sleep(CAMERA_SLEEP_TIME)
     
     picam2.stop_recording()
+    console_and_log("STOPPED RECORDING")
 
-
-    # Convert H264 to MP4
-    #conversion_command = f"ffmpeg -i {output} -c copy {mp4_output}"
-    #os.system(conversion_command)
-
-    # Delete the original H264 file after conversion
-    #os.remove(output)
 
     video_counter = video_counter + 1
 
@@ -103,7 +105,7 @@ if __name__ == "__main__":
         console_and_log("Program Started")
         set_up_folder()
         setup_pins()
-
+        
         while True:
             run_camera()
             sleep(TIME_BETWEEN_VIDEOS)
