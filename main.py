@@ -73,6 +73,8 @@ def run_camera():
     
     picam2.stop_recording()
 
+    switch_lights(False)
+
     video_counter = video_counter + 1
 
     # Convert H264 to MP4
@@ -84,8 +86,7 @@ def run_camera():
 
     print(f"Recorded {mp4_output}")
     write_to_log(f"Camera Off: Recorded {mp4_output}")
-    
-    switch_lights(False)
+
     
 
 def switch_lights(light):
