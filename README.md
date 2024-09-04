@@ -10,10 +10,11 @@ I have added a temperature sensor (in developmment) to be able to monitor how ho
 
 Upon completion the unit will
 
-- Turn on a camera on a set interval
-- Turn on a camera with ad hoc command
-- Turn on light(s) before recording with the camera
-- Store videos on SSD to be accessed via SSH
+- ✔ Turn on a camera on a set interval
+- ✔ Turn on a camera with ad hoc command
+- ✔ Turn on light(s) before recording with the camera
+- ✔ Store videos on SSD to be accessed via SSH
+- NEW: Record temperature in a log to be accessed via SSH
 
 ## Developer Notes
 
