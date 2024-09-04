@@ -84,7 +84,7 @@ The above steps will need to be completed before the code can be run.
 
 ### Pin assignments:
 
-LED1: BCM 13
+LED1: BCM 13  
 LED2: BCM 6
 
 PiCamera must be properly connected or program will not run.

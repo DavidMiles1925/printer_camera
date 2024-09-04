@@ -6,7 +6,7 @@ from picamera2 import Picamera2
 from time import sleep
 from logger import write_to_log
 
-from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_SLEEP_TIME, LIGHTING_ON
+from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_RECORDING_TIME, LIGHTING_ON
 
 LIGHT_1_PIN = 6
 LIGHT_2_PIN = 13
@@ -69,7 +69,7 @@ def run_camera():
 
     picam2.start_recording(encoder, output)
 
-    sleep(CAMERA_SLEEP_TIME)
+    sleep(CAMERA_RECORDING_TIME)
     
     picam2.stop_recording()
 
