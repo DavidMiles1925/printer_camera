@@ -30,7 +30,7 @@ Datasheet is included in the repository.
 
 #### One-Wire Interface
 
-This needs to be enabled to read the data pin. Do this in the RPi config.
+One-Wire Interface needs to be enabled to read the data pin. Do this in the RPi config.
 
 **[Documentation](https://pinout.xyz/pinout/1_wire)** can be found here.
 
@@ -79,6 +79,8 @@ cat w1_slave
 #### Code for Temp Sensor
 
 The library `temp.py` was created using code from the tutorial referenced above.
+
+It was adjusted so that it can be used as a library as well as run as a main function.
 
 The above steps will need to be completed before the code can be run.
 
