@@ -38,11 +38,15 @@ One-Wire Interface needs to be enabled to read the data pin. Do this in the RPi 
 
 1. Add to /boot/config.txt
 
+Run the raspberry pi config tool
+
 ```bash
-sudo nano /boot/config.txt
+sudo raspi-config
 ```
 
-`dtoverlay=w1-gpio`
+Select `Interface Options`
+
+Select `1-Wire` and Select "Yes"
 
 2. Reboot
 
@@ -78,11 +82,17 @@ cat w1_slave
 
 #### Code for Temp Sensor
 
+**About**
+
 The library `temp.py` was created using code from the tutorial referenced above.
 
 It was adjusted so that it can be used as a library as well as run as a main function.
 
 The above steps will need to be completed before the code can be run.
+
+**Integration**
+
+I set up the log function to take `prefix=` argument in order to accomodate the temp log.
 
 ### Pin assignments:
 

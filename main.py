@@ -7,6 +7,7 @@ from time import sleep
 from logger import write_to_log
 
 from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_RECORDING_TIME, LIGHTING_ON
+from temp import read_temp
 
 LIGHT_1_PIN = 6
 LIGHT_2_PIN = 13
@@ -111,6 +112,7 @@ if __name__ == "__main__":
             write_to_log("Running Camera")
             set_up_folder()
             run_camera()
+            write_to_log(read_temp(), "temp_")
             sleep(TIME_BETWEEN_VIDEOS)
 
     except KeyboardInterrupt:
