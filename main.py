@@ -33,9 +33,9 @@ def add_zeros_to_number(num, amt):
     else:
         return num_str
     
-def extract_temp_string():
+def construct_temp_string():
     temps = read_temp()
-    temp_string = f"Test {temps[1]}"
+    temp_string = f"\tC:  {temps[0]}\t\tF:  {temps[1]}"
     return temp_string
 
 def setup_pins():
@@ -117,8 +117,7 @@ if __name__ == "__main__":
             write_to_log("Running Camera")
             set_up_folder()
             run_camera()
-            write_to_log(read_temp(), "temp_")
-            print(extract_temp_string())
+            write_to_log(construct_temp_string(), "temp_")
             sleep(TIME_BETWEEN_VIDEOS)
 
     except KeyboardInterrupt:
