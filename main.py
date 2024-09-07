@@ -32,6 +32,11 @@ def add_zeros_to_number(num, amt):
         return '0' * num_zeros + num_str
     else:
         return num_str
+    
+def extract_temp_string():
+    temps = read_temp()
+    temp_string = f"Test {temps[1]}"
+    return temp_string
 
 def setup_pins():
     GPIO.setmode(GPIO.BCM)
@@ -113,6 +118,7 @@ if __name__ == "__main__":
             set_up_folder()
             run_camera()
             write_to_log(read_temp(), "temp_")
+            print(extract_temp_string())
             sleep(TIME_BETWEEN_VIDEOS)
 
     except KeyboardInterrupt:
