@@ -35,7 +35,7 @@ def add_zeros_to_number(num, amt):
     
 def construct_temp_string():
     temps = read_temp()
-    temp_string = f"\tC:  {temps[0]}\t\tF:  {temps[1]}"
+    temp_string = f"C:  {temps[0]}    F:  {temps[1]}"
     return temp_string
 
 def setup_pins():
