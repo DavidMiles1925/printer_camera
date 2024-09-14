@@ -14,7 +14,7 @@ Upon completion the unit will
 - ✔ Turn on a camera with ad hoc command
 - ✔ Turn on light(s) before recording with the camera
 - ✔ Store videos on SSD to be accessed via SSH
-- NEW: Record temperature in a log to be accessed via SSH
+- ✔ Record temperature in a log to be accessed via SSH
 
 ## Developer Notes
 
