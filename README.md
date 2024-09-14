@@ -20,13 +20,32 @@ Upon completion the unit will
 
 The majority of the code as repurposed from the motion_camera repository. Look there for more detailed documetnation.
 
+### Wiring
+
+### Pin assignments:
+
+| Pin Name          | Pin Number (BCM) | Purpose                                                |
+| :---------------- | :--------------- | :----------------------------------------------------- |
+| LIGHT_1_PIN       | 6                | Lighting: Brightening the printing chamber             |
+| LIGHT_2_PIN       | 13               | Lighting: Brightening the printing chamber             |
+| N/A               | GND (any)        | Lighting: Ground                                       |
+| 1-Wire Connection | 4                | Temperature Sensor: THIS WILL REQUIRE ADDITIONAL STEPS |
+| N/A               | GND (any)        | Temperature Sensor: Ground                             |
+| N/A               | 5V               | Temperature Sensor: Power                              |
+
+**PiCamera must be properly connected or program will not run.**
+
+### Camera
+
+- You will need to ensure picamera2 is installed on your machine.
+
+- I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation to avoid duplication of efforts.
+
 ### Temperature Sensor: DS18B20
 
 `temp.py` to be tested independently before adding functionallity to `main.py`.
 
 Datasheet is included in the repository.
-
-#### Wiring
 
 #### One-Wire Interface
 
@@ -94,14 +113,11 @@ The above steps will need to be completed before the code can be run.
 
 I set up the log function to take `prefix=` argument in order to accomodate the temp log.
 
-### Pin assignments:
-
-LED1: BCM 13  
-LED2: BCM 6
-
-PiCamera must be properly connected or program will not run.
-
 ### Dependencies:
 
 picamera2
 ffmpeg
+
+## Gallery
+
+![Version 1](./docs/camera_640x480.jpg)
