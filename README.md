@@ -18,7 +18,7 @@ Upon completion the unit will
 
 ## Developer Notes
 
-The majority of the code as repurposed from the motion_camera repository. Look there for more detailed documetnation.
+The majority of the code as repurposed from the [**motion_camera**](https://github.com/DavidMiles1925/motion_camera) repo. Look there for more detailed documetnation.
 
 ### Wiring
 
