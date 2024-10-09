@@ -6,7 +6,17 @@ This project was conceived because I have a resin 3D printer that I want to run 
 
 I have added a temperature sensor (in developmment) to be able to monitor how hot the internals of the printer may be getting. See the notes below.
 
-## Acceptance Criteria
+## Printer Notes
+
+Printer: Creality LD-002H
+
+TODO: Need to add chitubox profiles to GitHub repo.
+
+## Developer Notes
+
+The majority of the code as repurposed from the [**motion_camera**](https://github.com/DavidMiles1925/motion_camera) repo. Look there for more detailed documetnation.
+
+### Acceptance Criteria
 
 Upon completion the unit will
 
@@ -16,11 +26,9 @@ Upon completion the unit will
 - ✔ Store videos on SSD to be accessed via SSH
 - ✔ Record temperature in a log to be accessed via SSH
 
-## Developer Notes
-
-The majority of the code as repurposed from the [**motion_camera**](https://github.com/DavidMiles1925/motion_camera) repo. Look there for more detailed documetnation.
-
 ### Wiring
+
+DIAGRAM NEEDED
 
 ### Pin assignments:
 
