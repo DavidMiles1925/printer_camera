@@ -4,13 +4,7 @@
 
 This project was conceived because I have a resin 3D printer that I want to run outside. Because the printer is outside, I need to leave it blocked from sunlight. Therefore, I cannot check on the print by lifting the lid (at least not during the daytime).
 
-I have added a temperature sensor (in developmment) to be able to monitor how hot the internals of the printer may be getting. See the notes below.
-
-## Printer Notes
-
-Printer: Creality LD-002H
-
-TODO: Need to add chitubox profiles to GitHub repo.
+I have added a temperature sensor to be able to monitor how hot the internals of the printer may be getting. See the developer notes below.
 
 ## Developer Notes
 
@@ -129,3 +123,37 @@ ffmpeg
 ## Gallery
 
 ![Version 1](./docs/camera_640x480.jpg)
+
+## Printer Notes
+
+### Creality LD-002H
+
+#### Storage Notes
+
+> 10/8/24 - I have put the machine away for possible winter storage. I am getting ready to spend time with the family for a few weeks, and will get it out again afterward if the weather allows.
+> Printer was disassembled and parts cleaned. The parts are in the "Resin Printer" drawer.
+> FEP was inspected and I determined it was acceptable to store.
+> Current known resin profiles were added to this repo.
+
+#### Maintenance Notes
+
+**October 2024**
+
+- Greased the motor screw
+- Added magnetic build platform (after destroying the surface of the platform)
+- I have noticed what I believe to be paint comming off from somewhere and making its way into the vat. Cleaning may help with this, we'll see next time it is used.
+
+#### Need to Order...
+
+- IPA
+- Funnel filters
+- Wash Containers
+
+#### Quick Copy/Paste Commands
+
+**Pull Videos and Logs from Pi**
+
+```bash
+scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/recordings/ /c/users/USER_NAME/downloads
+scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/logs/ /c/users/USER_NAME/downloads
+```
