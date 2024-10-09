@@ -128,6 +128,8 @@ ffmpeg
 
 ### Creality LD-002H
 
+![Outside](./docs/outside.jpg)
+
 #### Storage Notes
 
 > 10/8/24 - I have put the machine away for possible winter storage. I am getting ready to spend time with the family for a few weeks, and will get it out again afterward if the weather allows.
@@ -157,3 +159,17 @@ ffmpeg
 scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/recordings/ /c/users/USER_NAME/downloads
 scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/logs/ /c/users/USER_NAME/downloads
 ```
+
+#### Other Documentaion Links
+
+**My article on printing outdoors**  
+[Article - Outdoor Resin Printinig](https://www.crealitycloud.com/post-detail/670402b9c42fe1d59f494f52)
+
+**My YouTube video showing outdoor printing**  
+[Video - Outdoor Resin Printing](https://youtu.be/wVPIBC5VqVw)
+
+**Resin Settings from Maker Trainer**  
+[LD-002H Resin Settings Spreadsheet](https://makertrainer.com/wiki/Creality_LD-002H_resin_settings)
+
+**Calibration Model and Tutorial from Ameralabs**  
+[Calibration Tutorial](https://ameralabs.com/blog/town-calibration-part/)
