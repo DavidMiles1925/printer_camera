@@ -132,6 +132,8 @@ ffmpeg
 
 #### Storage Notes
 
+> 10/20/24 - The weather will be nice for at least a week so I'm getting the printer out.
+
 > 10/8/24 - I have put the machine away for possible winter storage. I am getting ready to spend time with the family for a few weeks, and will get it out again afterward if the weather allows.
 > Printer was disassembled and parts cleaned. The parts are in the "Resin Printer" drawer.
 > FEP was inspected and I determined it was acceptable to store.
@@ -149,7 +151,7 @@ ffmpeg
 
 - IPA
 - Funnel filters
-- Wash Containers
+- Wash Containers - 3D print?
 
 #### Quick Copy/Paste Commands
 
