@@ -132,7 +132,7 @@ ffmpeg
 
 #### Storage Notes
 
-> 10/29/24 - Process for 10/8 was essntially repeated. FEP may need replacing in the spring. I was unable to tell if it was punctured. I have added a wash bin that I printed on the K1C. Added file to `profiles` direcetory.
+> 10/29/24 - Process for 10/8 was essntially repeated. FEP may need replacing in the spring. I was unable to tell if it was punctured. I have added a wash bin that I printed on the K1C. Added file to `print files` direcetory.
 
 > 10/20/24 - The weather will be nice for at least a week so I'm getting the printer out.
 
