@@ -8,7 +8,7 @@
 
 VIDEO_RECORDING_ON = True
 
-FILENAME_PREFIX = "Mars 5"
+FILENAME_PREFIX = "Mars_5" # Do NOT include spaces in the name.
 
 TIME_BETWEEN_VIDEOS = 885
 
