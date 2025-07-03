@@ -124,37 +124,6 @@ ffmpeg
 
 ![Version 1](./docs/camera_640x480.jpg)
 
-## Printer Notes
-
-### Creality LD-002H
-
-![Outside](./docs/outside.jpg)
-
-#### Storage Notes
-
-> 10/29/24 - Process for 10/8 was essntially repeated. FEP may need replacing in the spring. I was unable to tell if it was punctured. I have added a wash bin that I printed on the K1C. Added file to `print files` direcetory.
-
-> 10/20/24 - The weather will be nice for at least a week so I'm getting the printer out.
-
-> 10/8/24 - I have put the machine away for possible winter storage. I am getting ready to spend time with the family for a few weeks, and will get it out again afterward if the weather allows.
-> Printer was disassembled and parts cleaned. The parts are in the "Resin Printer" drawer.
-> FEP was inspected and I determined it was acceptable to store.
-> Current known resin profiles were added to this repo.
-
-#### Maintenance Notes
-
-**October 2024**
-
-- Greased the motor screw
-- Added magnetic build platform (after destroying the surface of the platform)
-- I have noticed what I believe to be paint comming off from somewhere and making its way into the vat. Cleaning may help with this, we'll see next time it is used.
-
-#### Need to Order...
-
-- IPA
-- Funnel filters
-- Wash Containers - 3D print?
-
 #### Quick Copy/Paste Commands
 
 **Pull Videos and Logs from Pi**

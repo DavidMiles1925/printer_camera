@@ -6,12 +6,13 @@
 ##############################
 ##############################
 
+VIDEO_RECORDING_ON = True
 
-FILENAME_PREFIX = "print"
+FILENAME_PREFIX = "Mars 5"
 
-TIME_BETWEEN_VIDEOS = 1780
+TIME_BETWEEN_VIDEOS = 885
 
-CAMERA_RECORDING_TIME = 20
+CAMERA_RECORDING_TIME = 15
 
 DIRECTORY_NAME_PREFIX = FILENAME_PREFIX
 
@@ -22,6 +23,17 @@ LIGHTING_ON = True
 
 
     #https://datasheets.raspberrypi.com/camera/picamera2-manual.pdf
+
+
+##############################
+##############################
+#####                    #####
+#####        Temp        #####
+#####                    #####
+##############################
+##############################
+
+TEMPERATURE_LOGGING_ON = True
 
 
 ##############################
