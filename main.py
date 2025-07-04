@@ -6,7 +6,7 @@ from picamera2 import Picamera2
 from time import sleep
 from logger import write_to_log
 
-from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_RECORDING_TIME, LIGHTING_ON, VIDEO_RECORDING_ON, TEMPERATURE_LOGGING_ON
+from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_RECORDING_TIME, LIGHTING_ON, VIDEO_RECORDING_ON, TEMPERATURE_LOGGING_ON, LIGHT_ALWAYS_ON
 from temp import read_temp
 
 LIGHT_1_PIN = 6
@@ -61,8 +61,10 @@ def set_up_folder():
     os.chdir(recordings_path_str)
 
 def run_camera():
-    switch_lights(True)
     global video_counter
+
+    if LIGHT_ALWAYS_ON == False:
+        switch_lights(True)
 
     timestamp = datetime.now().strftime("%H.%M.%S")
 
@@ -79,7 +81,8 @@ def run_camera():
     
     picam2.stop_recording()
 
-    switch_lights(False)
+    if LIGHT_ALWAYS_ON == False:
+        switch_lights(False)
 
     print(f"Recorded {output}\nConverting to MP4...")
 
@@ -112,6 +115,9 @@ if __name__ == "__main__":
         print("Program Started")
         write_to_log("Program Started")
         setup_pins()
+
+        if LIGHT_ALWAYS_ON == True:
+            switch_lights(True)
         
         while True:
             if VIDEO_RECORDING_ON == True:

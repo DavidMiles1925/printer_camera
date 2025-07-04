@@ -1,3 +1,8 @@
+# This device has 3 primary functions it can be used for:
+#   -   Video Recording
+#   -   Temperature Logging
+#   -   Lighting the Chamber
+
 ##############################
 ##############################
 #####                    #####
@@ -19,6 +24,8 @@ DIRECTORY_NAME_PREFIX = FILENAME_PREFIX
 SAVE_DIRECTORY_PATH = "/home/pidgey/printer_camera/recordings/"
 
 LIGHTING_ON = True
+
+LIGHT_ALWAYS_ON = True
 
 
 
