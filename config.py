@@ -3,6 +3,8 @@
 #   -   Temperature Logging
 #   -   Lighting the Chamber
 
+TIME_BETWEEN_LOOP_ITERATIONS = 885 # Seconds between checks for feature activation (not including the length of the video recording)
+
 ##############################
 ##############################
 #####                    #####
@@ -14,8 +16,6 @@
 VIDEO_RECORDING_ON = True
 
 FILENAME_PREFIX = "Mars_5" # Do NOT include spaces in the name.
-
-TIME_BETWEEN_VIDEOS = 885
 
 CAMERA_RECORDING_TIME = 15
 

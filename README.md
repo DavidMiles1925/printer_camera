@@ -20,6 +20,21 @@ Upon completion the unit will
 - ✔ Store videos on SSD to be accessed via SSH
 - ✔ Record temperature in a log to be accessed via SSH
 
+### Config Options
+
+| Option                         | Possible Values                                 | Purpose                                                                                              |
+| :----------------------------- | :---------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+| `TIME_BETWEEN_LOOP_ITERATIONS` | Any Number                                      | Seconds between checks for feature activation (not including the length of the video recording)      |
+| `VIDEO_RECORDING_ON`           | True/False                                      | Turn video recording feature on or off                                                               |
+| `FILENAME_PREFIX`              | Any String - Do NOT include spaces in the name. | This is will be filename, followed by a number                                                       |
+| `CAMERA_RECORDING_TIME`        | Any Number                                      | Seconds that the camera will record if activated                                                     |
+| `DIRECTORY_NAME_PREFIX`        | Any String                                      | This is the directory name prefix where videos will be stored                                        |
+| `SAVE_DIRECTORY_PATH`          | "/home/[PI NAME]/printer_camera/recordings/"    | The directory where recordings will be stored                                                        |
+| `LIGHTING_ON`                  | True/False                                      | This determines whether the light will turn on WHILE THE CAMERA IS RUNNING                           |
+| `LIGHT_ALWAYS_ON`              | True/ False                                     | This will determine if the light is ALWAYS ON while the program is running EVEN IF THE CAMERA IS NOT |
+| `TEMPERATURE_LOGGING_ON`       | True/False                                      | This determines whether the temperature will be logged when                                          |
+| `LOG_DIRECTORY_PATH`           | "/home/[PI NAME]/printer_camera/logs"           | This is the directory name prefix where logs will be stored                                          |
+
 ### Wiring
 
 DIAGRAM NEEDED
@@ -44,10 +59,6 @@ DIAGRAM NEEDED
 - I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation to avoid duplication of efforts.
 
 ### Temperature Sensor: DS18B20
-
-`temp.py` to be tested independently before adding functionallity to `main.py`.
-
-Datasheet is included in the repository.
 
 #### One-Wire Interface
 

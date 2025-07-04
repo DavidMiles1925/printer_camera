@@ -6,7 +6,7 @@ from picamera2 import Picamera2
 from time import sleep
 from logger import write_to_log
 
-from config import TIME_BETWEEN_VIDEOS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_RECORDING_TIME, LIGHTING_ON, VIDEO_RECORDING_ON, TEMPERATURE_LOGGING_ON, LIGHT_ALWAYS_ON
+from config import TIME_BETWEEN_LOOP_ITERATIONS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_RECORDING_TIME, LIGHTING_ON, VIDEO_RECORDING_ON, TEMPERATURE_LOGGING_ON, LIGHT_ALWAYS_ON
 from temp import read_temp
 
 LIGHT_1_PIN = 6
@@ -126,7 +126,7 @@ if __name__ == "__main__":
                 run_camera()
             if TEMPERATURE_LOGGING_ON == True:
                 write_to_log(construct_temp_string(), "temp_")
-            sleep(TIME_BETWEEN_VIDEOS)
+            sleep(TIME_BETWEEN_LOOP_ITERATIONS)
 
     except KeyboardInterrupt:
         print("Program terminated with ctrl+c")
