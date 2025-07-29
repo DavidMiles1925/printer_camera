@@ -38,6 +38,8 @@ sudo apt install -y ffmpeg
 
 All programs should be run from the command line.
 
+Options can be configured in `config.py`.
+
 #### main.py
 
     This runs the main app which takes a video every `{CAMERA_RECORDING_TIME}` seconds.
@@ -72,13 +74,17 @@ All programs should be run from the command line.
 | :----------------------- | :-------------- | :---------------------------------------------------------- |
 | `TEMPERATURE_LOGGING_ON` | True/False      | This determines whether the temperature will be logged when |
 
-#### camera.py
+#### camera_and_light.py
 
     This program is a stand-alone app used for testing the camera or grabbing an ad hoc picture/video.
 
-| Option                  | Possible Values | Purpose                                           |
-| :---------------------- | :-------------- | :------------------------------------------------ |
-| `SINGLE_RECORDING_TIME` | Any Number      | The length of the video to be recorded in seconds |
+    It can be used to toggle lights in the chamber on and off.
+
+| Option                  | Possible Values      | Purpose                                               |
+| :---------------------- | :------------------- | :---------------------------------------------------- |
+| `SINGLE_RECORDING_TIME` | Any Number           | The length of the video to be recorded in seconds     |
+| `LIGHT_PIN_1`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
+| `LIGHT_PIN_2`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
 
 ## Developer Notes
 
