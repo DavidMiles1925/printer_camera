@@ -102,11 +102,12 @@ Options can be configured in `config.py`.
 >
 > Videos are stored in .mp4 format (after being converted from .h264)
 >
-> | Option                  | Possible Values      | Purpose                                               |
-> | :---------------------- | :------------------- | :---------------------------------------------------- |
-> | `SINGLE_RECORDING_TIME` | Any Number           | The length of the video to be recorded in seconds     |
-> | `LIGHT_PIN_1`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
-> | `LIGHT_PIN_2`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
+> | Option                  | Possible Values      | Purpose                                                                  |
+> | :---------------------- | :------------------- | :----------------------------------------------------------------------- |
+> | `SINGLE_RECORDING_TIME` | Any Number           | The length of the video to be recorded in seconds                        |
+> | `LIGHT_PIN_1`           | BCM number from GPIO | This pin will be used for an LED to light the chamber                    |
+> | `LIGHT_PIN_2`           | BCM number from GPIO | This pin will be used for an LED to light the chamber                    |
+> | `DISABLE_CAMERA`        | True/False           | Turn to `True` to be able to disconnect RPi Camera Module without errors |
 
 #### pull_files.py
 

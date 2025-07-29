@@ -95,7 +95,7 @@ def main():
             print(f"Current Temperature is {round(temps[1], 1)}°F ({round(temps[0], 1)}°C)\n")
             print("What would you like to do?\n")
             print(f"1. {'Take a photo' if DISABLE_CAMERA == False else 'Camera Disabled'}")
-            print(f"2. {'Record a video' if DISABLE_CAMERA == False else 'Camera Disabled'} ({SINGLE_RECORDING_TIME} seconds)")
+            print(f"2. {'Record a video' if DISABLE_CAMERA == False else 'Camera Disabled'} ({SINGLE_RECORDING_TIME if DISABLE_CAMERA == False else ''} {'seconds' if DISABLE_CAMERA == False else ''})")
             print("3. Toggle light (currently: {})".format("ON" if light_is_on else "OFF"))
             print("4. Exit\n")
             choice = input("Enter your choice (1/2/3/4): ").strip()
