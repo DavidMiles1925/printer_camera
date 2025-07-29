@@ -7,27 +7,28 @@ import time
 from datetime import datetime
 
 from temp import read_temp
-from config import SINGLE_RECORDING_TIME, LIGHT_PIN_1, LIGHT_PIN_2
+from config import SINGLE_RECORDING_TIME, LIGHT_PIN_1, LIGHT_PIN_2, DISABLE_CAMERA
 
 pins = [
     LIGHT_PIN_1, LIGHT_PIN_2
 ]
+
+light_is_on = False
+
+if DISABLE_CAMERA == False:
+    picam2 = Picamera2()
+
+    PHOTO_DIR = "photos"
+    os.makedirs(PHOTO_DIR, exist_ok=True)
+
+    VIDEO_DIR = "recordings"
+    os.makedirs(VIDEO_DIR, exist_ok=True)
 
 def setup_pins():
     GPIO.setmode(GPIO.BCM)
 
     for pin in pins:
         GPIO.setup(pin, GPIO.OUT)
-
-light_is_on = False
-
-picam2 = Picamera2()
-
-PHOTO_DIR = "photos"
-os.makedirs(PHOTO_DIR, exist_ok=True)
-
-VIDEO_DIR = "recordings"
-os.makedirs(VIDEO_DIR, exist_ok=True)
 
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
@@ -93,8 +94,8 @@ def main():
 
             print(f"Current Temperature is {round(temps[1], 1)}°F ({round(temps[0], 1)}°C)\n")
             print("What would you like to do?\n")
-            print("1. Take a photo")
-            print(f"2. Record a video ({SINGLE_RECORDING_TIME} seconds)")
+            print(f"1. {'Take a photo' if DISABLE_CAMERA == False else 'Camera Disabled'}")
+            print(f"2. {'Record a video' if DISABLE_CAMERA == False else 'Camera Disabled'} ({SINGLE_RECORDING_TIME} seconds)")
             print("3. Toggle light (currently: {})".format("ON" if light_is_on else "OFF"))
             print("4. Exit\n")
             choice = input("Enter your choice (1/2/3/4): ").strip()

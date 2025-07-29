@@ -143,7 +143,7 @@ The majority of the original code as repurposed from the [**motion_camera**](htt
 
 ### Wiring
 
-❌ DIAGRAM NEEDED
+![Wiring](./docs/wiring.jpg)
 
 ### Pin assignments:
 

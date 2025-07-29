@@ -81,3 +81,4 @@ USERNAME = "pidgey"
 REMOTE_PATH_PHOTO = "/home/pidgey/printer_camera/photos/"
 REMOTE_PATH_VIDEO = "/home/pidgey/printer_camera/recordings/"
 LOCAL_PATH = "C:/Users/astro/Downloads"
+DISABLE_CAMERA = False
