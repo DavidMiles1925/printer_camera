@@ -57,20 +57,30 @@ def capture_photo(filename="photo.jpg"):
     picam2.stop()
     print("Photo saved.\n")
 
-def capture_video(filename="video.h264", duration=10):
-    filepath = os.path.join(VIDEO_DIR, filename)
-    print(f"Recording video: {filepath} for {duration} seconds")
+def capture_video(filename="video", duration=10):
+    h264_path = os.path.join(VIDEO_DIR, f"{filename}.h264")
+    mp4_path = os.path.join(VIDEO_DIR, f"{filename}.mp4")
+
+    print(f"Recording video: {h264_path} for {duration} seconds")
 
     config = picam2.create_video_configuration()
     picam2.configure(config)
 
     encoder = H264Encoder()
-    output = FileOutput(filepath)
+    output = FileOutput(h264_path)
 
     picam2.start_recording(encoder, output)
     time.sleep(duration)
     picam2.stop_recording()
-    print("Video saved.\n")
+
+    print("Converting to MP4...")
+    conversion_command = f"ffmpeg -y -i {h264_path} -c copy {mp4_path}"
+    os.system(conversion_command)
+
+    # Delete original .h264 file
+    os.remove(h264_path)
+
+    print(f"Video saved to {mp4_path}\n")
 
 
 def main():
