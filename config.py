@@ -65,4 +65,4 @@ LOG_DIRECTORY_PATH = "/home/pidgey/printer_camera/logs"
 
 SINGLE_RECORDING_TIME = 5
 LIGHT_PIN_1 = 17
-LIGHT_PIN_2 = 27
+LIGHT_PIN_2 = 26
