@@ -85,7 +85,7 @@ def capture_video(filename="video", duration=10):
 
 def main():
     try: 
-        global light_is_on  # so we can modify it inside the function
+        global light_is_on
 
         setup_pins()
 
@@ -93,7 +93,7 @@ def main():
             clear_screen()
             print("What would you like to do?")
             print("1. Take a photo")
-            print("2. Record a video (10 seconds)")
+            print(f"2. Record a video ({SINGLE_RECORDING_TIME} seconds)")
             print("3. Toggle light (currently: {})".format("ON" if light_is_on else "OFF"))
             print("4. Exit")
             choice = input("Enter your choice (1/2/3/4): ").strip()

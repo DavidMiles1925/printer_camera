@@ -11,7 +11,7 @@ I have added a temperature sensor to be able to monitor how hot the internals of
     ✅ Turns on a camera on a set interval
     ✅ Turns on a camera with ad hoc command and/or separate program
     ✅ Turn on light(s) before recording with the camera (and off after recording)
-    🟡 Turns on light with ad hoc command and/or separate program
+    ✅ Turns on light with ad hoc command and/or separate program
     ✅ Store videos on SSD to be accessed via SSH
     ✅ Record temperature in a log to be accessed via SSH
     🟡 Fully 3D printed shell
@@ -40,7 +40,7 @@ All programs should be run from the command line.
 
 Options can be configured in `config.py`.
 
-#### main.py
+#### `main.py`
 
     This runs the main app which takes a video every `{CAMERA_RECORDING_TIME}` seconds.
 
@@ -64,7 +64,7 @@ Options can be configured in `config.py`.
 | `LIGHT_ALWAYS_ON`              | True/ False                                     | This will determine if the light is ALWAYS ON while the program is running EVEN IF THE CAMERA IS NOT |
 | `LOG_DIRECTORY_PATH`           | "/home/[PI NAME]/printer_camera/logs"           | This is the directory name prefix where logs will be stored                                          |
 
-#### temp.py
+#### `temp.py`
 
     This program, when run by iteself, will print the current temperature to the console.
 
@@ -74,11 +74,15 @@ Options can be configured in `config.py`.
 | :----------------------- | :-------------- | :---------------------------------------------------------- |
 | `TEMPERATURE_LOGGING_ON` | True/False      | This determines whether the temperature will be logged when |
 
-#### camera_and_light.py
+#### `camera_and_light.py`
 
     This program is a stand-alone app used for testing the camera or grabbing an ad hoc picture/video.
 
-    It can be used to toggle lights in the chamber on and off.
+    It can also be used to toggle lights in the chamber on and off.
+
+    Photos are saved in .jpg format.
+
+    Videos are stored in .mp4 format (after being converted from .h264)
 
 | Option                  | Possible Values      | Purpose                                               |
 | :---------------------- | :------------------- | :---------------------------------------------------- |
@@ -115,9 +119,13 @@ The majority of the original code as repurposed from the [**motion_camera**](htt
 
     I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation for more information.
 
-    Ensure the camera is installed (in the RPI Zero 2 W) with the gold traces facing the board ("face-down")
+    Ensure the camera is installed (in the RPI Zero 2 W) with the gold traces facing the board ("face-down").
 
-❌ Picture Needed
+    The side of the camera with the cable running in is the bottom of the camera.
+
+![Camera Traces](.docs/camera_traces.jpg)
+
+![Camera Orientation](.docs/camera_orientation.jpg)
 
 ### Temperature Sensor: DS18B20
 
