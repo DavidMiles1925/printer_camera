@@ -123,9 +123,9 @@ The majority of the original code as repurposed from the [**motion_camera**](htt
 
     The side of the camera with the cable running in is the bottom of the camera.
 
-![Camera Traces](.docs/camera_traces.jpg)
+![Camera Traces](./docs/camera_traces.jpg)
 
-![Camera Orientation](.docs/camera_orientation.jpg)
+![Camera Orientation](./docs/camera_orientation.jpg)
 
 ### Temperature Sensor: DS18B20
 
