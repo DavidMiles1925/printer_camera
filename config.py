@@ -66,3 +66,18 @@ LOG_DIRECTORY_PATH = "/home/pidgey/printer_camera/logs"
 SINGLE_RECORDING_TIME = 5
 LIGHT_PIN_1 = 17
 LIGHT_PIN_2 = 26
+
+
+##############################
+##############################
+#####                    #####
+#####     PULL FILES     #####
+#####                    #####
+##############################
+##############################
+
+REMOTE_HOST = "192.168.1.161"
+USERNAME = "pidgey"
+REMOTE_PATH_PHOTO = "/home/pidgey/printer_camera/photos/"
+REMOTE_PATH_VIDEO = "/home/pidgey/printer_camera/recordings/"
+LOCAL_PATH = "C:/Users/astro/Downloads"

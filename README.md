@@ -30,15 +30,29 @@ git clone https://github.com/DavidMiles1925/printer_camera.git
 
 #### picamera2
 
-```bash
-sudo apt install -y python3-picamera2
-```
+> This is the library used to interact with the RPi Camera Module
+>
+> ```bash
+> sudo apt install -y python3-picamera2
+> ```
 
 #### ffmpeg
 
-```bash
-sudo apt install -y ffmpeg
-```
+> This library gets used to convert .h264 files to .mp4.
+>
+> ```bash
+> sudo apt install -y ffmpeg
+> ```
+
+#### paramiko scp
+
+> This will be installed on your **_WINDOWS MACHINE_** to bring files over from the pi.
+>
+> Ensure that you have set up an SSH Key. [**Documentation for SSH Setup Here**](https://github.com/DavidMiles1925/pi_zero_setup#set-up-ssh-key-to-eliminate-need-for-password)
+>
+> ```bash
+> pip install paramiko scp
+> ```
 
 ### Programs
 
@@ -93,6 +107,20 @@ Options can be configured in `config.py`.
 > | `SINGLE_RECORDING_TIME` | Any Number           | The length of the video to be recorded in seconds     |
 > | `LIGHT_PIN_1`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
 > | `LIGHT_PIN_2`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
+
+#### pull_files.py
+
+> This program is only to be run on a windows machine.
+>
+> | Option              | Possible Values | Purpose                                               |
+> | :------------------ | :-------------- | :---------------------------------------------------- |
+> | `REMOTE_HOST`       | RPi IP Address  | The length of the video to be recorded in seconds     |
+> | `USERNAME`          | RPi Username    | This pin will be used for an LED to light the chamber |
+> | `REMOTE_PATH_PHOTO` | File Path       | Path to grab photo files from                         |
+> | `REMOTE_PATH_VIDEO` | File Path       | Path to grab video files from                         |
+> | `LOCAL_PATH`        | File path       | Path where files will be downloaded                   |
+
+---
 
 ## Developer Notes
 
