@@ -66,9 +66,9 @@ Options can be configured in `config.py`.
 
 #### `temp.py`
 
-    This program, when run by iteself, will print the current temperature to the console.
-
-    This module is used in main.py to log the temperature each time the camera records a video.
+> This program, when run by iteself, will print the current temperature to the console.
+>
+> This module is used in main.py to log the temperature each time the camera records a video.
 
 | Option                   | Possible Values | Purpose                                                     |
 | :----------------------- | :-------------- | :---------------------------------------------------------- |
@@ -76,13 +76,13 @@ Options can be configured in `config.py`.
 
 #### `camera_and_light.py`
 
-    This program is a stand-alone app used for testing the camera or grabbing an ad hoc picture/video.
-
-    It can also be used to toggle lights in the chamber on and off.
-
-    Photos are saved in .jpg format.
-
-    Videos are stored in .mp4 format (after being converted from .h264)
+> This program is a stand-alone app used for testing the camera or grabbing an ad hoc picture/video.
+>
+> It can also be used to toggle lights in the chamber on and off.
+>
+> Photos are saved in .jpg format.
+>
+> Videos are stored in .mp4 format (after being converted from .h264)
 
 | Option                  | Possible Values      | Purpose                                               |
 | :---------------------- | :------------------- | :---------------------------------------------------- |
@@ -115,13 +115,13 @@ The majority of the original code as repurposed from the [**motion_camera**](htt
 
 #### Camera Installation
 
-    You will need to ensure picamera2 is installed on your machine. (see Dependencies above)
-
-    I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation for more information.
-
-    Ensure the camera is installed (in the RPI Zero 2 W) with the gold traces facing the board ("face-down").
-
-    The side of the camera with the cable running in is the bottom of the camera.
+> You will need to ensure picamera2 is installed on your machine. (see Dependencies above)
+>
+> I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation for more information.
+>
+> Ensure the camera is installed (in the RPI Zero 2 W) with the gold traces facing the board ("face-down").
+>
+> The side of the camera with the cable running in is the bottom of the camera.
 
 ![Camera Traces](./docs/camera_traces.jpg)
 
