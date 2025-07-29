@@ -18,6 +18,12 @@ I have added a temperature sensor to be able to monitor how hot the internals of
 
 ## Using the Software
 
+### Clone Repo:
+
+```bash
+git clone https://github.com/DavidMiles1925/printer_camera.git
+```
+
 ### Dependencies:
 
 **Note: These _MUST_ be installed prior to using this software.**

@@ -19,18 +19,13 @@ def setup_pins():
     for pin in pins:
         GPIO.setup(pin, GPIO.OUT)
 
-# Track light state
 light_is_on = False
 
-
-# Initialize camera
 picam2 = Picamera2()
 
-# Ensure the 'photos' directory exists
 PHOTO_DIR = "photos"
 os.makedirs(PHOTO_DIR, exist_ok=True)
 
-# Ensure the 'recordings' directory exists
 VIDEO_DIR = "recordings"
 os.makedirs(VIDEO_DIR, exist_ok=True)
 
@@ -78,7 +73,6 @@ def capture_video(filename="video", duration=10):
     conversion_command = f"ffmpeg -y -i {h264_path} -c copy {mp4_path}"
     os.system(conversion_command)
 
-    # Delete original .h264 file
     os.remove(h264_path)
 
     print(f"Video saved to {mp4_path}\n")
@@ -95,7 +89,7 @@ def main():
 
             clear_screen()
 
-            print(f"Current Temperature is {temps[1]}°F ({temps[0]}°C)\n")
+            print(f"Current Temperature is {round(temps[1], 1)}°F ({round(temps[0], 1)}°C)\n")
             print("What would you like to do?\n")
             print("1. Take a photo")
             print(f"2. Record a video ({SINGLE_RECORDING_TIME} seconds)")
@@ -120,9 +114,15 @@ def main():
             else:
                 print("Invalid choice. Please enter 1, 2, 3, or 4.\n")
                 time.sleep(2)
+
     except Exception as e:
         print ("A top-level exception occured.")
+        GPIO.cleanup()
         print(e.with_traceback)
+
+    except KeyboardInterrupt:
+        print("Program was closed with Ctrl-C")
+        GPIO.cleanup()
 
 
 if __name__ == "__main__":
