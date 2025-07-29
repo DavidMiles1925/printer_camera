@@ -48,7 +48,7 @@ git clone https://github.com/DavidMiles1925/printer_camera.git
 
 > This will be installed on your **_WINDOWS MACHINE_** to bring files over from the pi.
 >
-> Ensure that you have set up an SSH Key. [**Documentation for SSH Setup Here**](https://github.com/DavidMiles1925/pi_zero_setup#set-up-ssh-key-to-eliminate-need-for-password)
+> Ensure that you have set up an SSH Key. [**Documentation for SSH Key Setup Here**](https://github.com/DavidMiles1925/pi_zero_setup#set-up-ssh-key-to-eliminate-need-for-password)
 >
 > ```bash
 > pip install paramiko scp
@@ -111,6 +111,8 @@ Options can be configured in `config.py`.
 #### pull_files.py
 
 > This program is only to be run on a windows machine.
+>
+> You **_MUST_** have set up an SSK Key. [**Documentation for SSH Key Setup Here**](https://github.com/DavidMiles1925/pi_zero_setup#set-up-ssh-key-to-eliminate-need-for-password)
 >
 > | Option              | Possible Values | Purpose                                               |
 > | :------------------ | :-------------- | :---------------------------------------------------- |
