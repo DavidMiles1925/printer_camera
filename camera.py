@@ -14,6 +14,14 @@ picam2 = Picamera2()
 PHOTO_DIR = "photos"
 os.makedirs(PHOTO_DIR, exist_ok=True)
 
+# Ensure the 'recordings' directory exists
+VIDEO_DIR = "recordings"
+os.makedirs(VIDEO_DIR, exist_ok=True)
+
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
 def capture_photo(filename="photo.jpg"):
     filepath = os.path.join(PHOTO_DIR, filename)
 
@@ -27,22 +35,24 @@ def capture_photo(filename="photo.jpg"):
     print("Photo saved.\n")
 
 def capture_video(filename="video.h264", duration=10):
-    print(f"Recording video: {filename} for {duration} seconds")
-    
-    # Configure camera for video
+    filepath = os.path.join(VIDEO_DIR, filename)
+    print(f"Recording video: {filepath} for {duration} seconds")
+
     config = picam2.create_video_configuration()
     picam2.configure(config)
 
     encoder = H264Encoder()
-    output = FileOutput(filename)
+    output = FileOutput(filepath)
 
     picam2.start_recording(encoder, output)
     time.sleep(duration)
     picam2.stop_recording()
     print("Video saved.\n")
 
+
 def main():
     while True:
+        clear_screen()
         print("What would you like to do?")
         print("1. Take a photo")
         print("2. Record a video (10 seconds)")

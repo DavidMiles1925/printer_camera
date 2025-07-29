@@ -6,19 +6,17 @@ This project was conceived because I have a resin 3D printer that I want to run 
 
 I have added a temperature sensor to be able to monitor how hot the internals of the printer may be getting. See the developer notes below.
 
-## Developer Notes
-
-The majority of the code as repurposed from the [**motion_camera**](https://github.com/DavidMiles1925/motion_camera) repo. Look there for more detailed documetnation.
-
 ### Features
 
-- ✅ Turns on a camera on a set interval
-- ✅ Turns on a camera with ad hoc command and/or separate program
-- ✅ Turn on light(s) before recording with the camera (and off after recording)
-- 🟡 Turns on light with ad hoc command and/or separate program
-- ✅ Store videos on SSD to be accessed via SSH
-- ✅ Record temperature in a log to be accessed via SSH
-- 🟡 Fully 3D printed shell
+    ✅ Turns on a camera on a set interval
+    ✅ Turns on a camera with ad hoc command and/or separate program
+    ✅ Turn on light(s) before recording with the camera (and off after recording)
+    🟡 Turns on light with ad hoc command and/or separate program
+    ✅ Store videos on SSD to be accessed via SSH
+    ✅ Record temperature in a log to be accessed via SSH
+    🟡 Fully 3D printed shell
+
+## Using the Software
 
 ### Dependencies:
 
@@ -36,21 +34,55 @@ sudo apt install -y python3-picamera2
 sudo apt install -y ffmpeg
 ```
 
-### Config Options
+### Programs
+
+All programs should be run from the command line.
+
+#### main.py
+
+    This runs the main app which takes a video every `{CAMERA_RECORDING_TIME}` seconds.
+
+    **Before running make sure these options are configured!**
+
+        `SAVE_DIRECTORY_PATH` and `LOG_DIRECTORY_PATH` have the correct Pi Name in their directory path.
+
+        `FILENAME_PREFIX` has a descriptor that acurately describes the material being recorded.
+
+##### Config Options
 
 | Option                         | Possible Values                                 | Purpose                                                                                              |
 | :----------------------------- | :---------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
-| `TIME_BETWEEN_LOOP_ITERATIONS` | Any Number                                      | Seconds between checks for feature activation (not including the length of the video recording)      |
 | `VIDEO_RECORDING_ON`           | True/False                                      | Turn video recording feature on or off                                                               |
-| `FILENAME_PREFIX`              | Any String - Do NOT include spaces in the name. | This is will be filename, followed by a number                                                       |
 | `CAMERA_RECORDING_TIME`        | Any Number                                      | Seconds that the camera will record if activated                                                     |
+| `TIME_BETWEEN_LOOP_ITERATIONS` | Any Number                                      | Seconds between checks for feature activation (not including the length of the video recording)      |
+| `FILENAME_PREFIX`              | Any String - Do NOT include spaces in the name. | This is will be filename, followed by a number                                                       |
 | `DIRECTORY_NAME_PREFIX`        | Any String                                      | This is the directory name prefix where videos will be stored                                        |
 | `SAVE_DIRECTORY_PATH`          | "/home/[PI NAME]/printer_camera/recordings/"    | The directory where recordings will be stored                                                        |
 | `LIGHTING_ON`                  | True/False                                      | This determines whether the light will turn on WHILE THE CAMERA IS RUNNING                           |
 | `LIGHT_ALWAYS_ON`              | True/ False                                     | This will determine if the light is ALWAYS ON while the program is running EVEN IF THE CAMERA IS NOT |
-| `TEMPERATURE_LOGGING_ON`       | True/False                                      | This determines whether the temperature will be logged when                                          |
 | `LOG_DIRECTORY_PATH`           | "/home/[PI NAME]/printer_camera/logs"           | This is the directory name prefix where logs will be stored                                          |
-| `SINGLE_RECORDING_TIME`        | Any Number                                      | CAMERA UTILITY: The length of the video to be recorded in seconds                                    |
+
+#### temp.py
+
+    This program, when run by iteself, will print the current temperature to the console.
+
+    This module is used in main.py to log the temperature each time the camera records a video.
+
+| Option                   | Possible Values | Purpose                                                     |
+| :----------------------- | :-------------- | :---------------------------------------------------------- |
+| `TEMPERATURE_LOGGING_ON` | True/False      | This determines whether the temperature will be logged when |
+
+#### camera.py
+
+    This program is a stand-alone app used for testing the camera or grabbing an ad hoc picture/video.
+
+| Option                  | Possible Values | Purpose                                           |
+| :---------------------- | :-------------- | :------------------------------------------------ |
+| `SINGLE_RECORDING_TIME` | Any Number      | The length of the video to be recorded in seconds |
+
+## Developer Notes
+
+The majority of the original code as repurposed from the [**motion_camera**](https://github.com/DavidMiles1925/motion_camera) repo. Look there for more detailed documetnation.
 
 ### Wiring
 
@@ -73,11 +105,11 @@ sudo apt install -y ffmpeg
 
 #### Camera Installation
 
-- You will need to ensure picamera2 is installed on your machine. (see Dependencies above)
+    You will need to ensure picamera2 is installed on your machine. (see Dependencies above)
 
-- I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation for more information.
+    I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation for more information.
 
-- Ensure the camera is installed (in the RPI Zero 2 W) with the gold traces facing the board ("face-down")
+    Ensure the camera is installed (in the RPI Zero 2 W) with the gold traces facing the board ("face-down")
 
 ❌ Picture Needed
 
