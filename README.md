@@ -50,8 +50,6 @@ Options can be configured in `config.py`.
 >
 > `FILENAME_PREFIX` has a descriptor that acurately describes the material being recorded.
 >
-> ##### Config Options
->
 > | Option                         | Possible Values                                 | Purpose                                                                                              |
 > | :----------------------------- | :---------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
 > | `VIDEO_RECORDING_ON`           | True/False                                      | Turn video recording feature on or off                                                               |
@@ -66,7 +64,7 @@ Options can be configured in `config.py`.
 
 #### `temp.py`
 
-> This program, when run by iteself, will print the current temperature to the console.
+> This program, when run by iteself, will print the current temperature to the console intermitently.
 >
 > This module is used in main.py to log the temperature each time the camera records a video.
 >
@@ -94,6 +92,19 @@ Options can be configured in `config.py`.
 
 The majority of the original code as repurposed from the [**motion_camera**](https://github.com/DavidMiles1925/motion_camera) repo. Look there for more detailed documetnation.
 
+### Materials
+
+| Material                                 | Quantity | Link                            |
+| :--------------------------------------- | :------: | :------------------------------ |
+| Raspberri Pi Zero 2 W (with header pins) |    1     |                                 |
+| SD Card Formatted with Raspberry Pi OS   |    1     |                                 |
+| Raspberri Pi Camera Module               |    1     |                                 |
+| Breadboard                               |    1     |                                 |
+| 3D Printed Shell                         |    2     | [Printed Shell](./print_files/) |
+| 100Ω Resistor (for lights)               |    2     |                                 |
+| 4.7KΩ Resistor (for temperature sensor)  |    1     |                                 |
+| DuPont Cables M-F (short)                |    5     |                                 |
+
 ### Wiring
 
 ❌ DIAGRAM NEEDED
@@ -102,8 +113,8 @@ The majority of the original code as repurposed from the [**motion_camera**](htt
 
 | Pin Name          | Pin Number (BCM) | Purpose                                                |
 | :---------------- | :--------------- | :----------------------------------------------------- |
-| LIGHT_1_PIN       | 6                | Lighting: Brightening the printing chamber             |
-| LIGHT_2_PIN       | 13               | Lighting: Brightening the printing chamber             |
+| LIGHT_1_PIN       | 17               | Lighting: Brightening the printing chamber             |
+| LIGHT_2_PIN       | 26               | Lighting: Brightening the printing chamber             |
 | N/A               | GND (any)        | Lighting: Ground                                       |
 | 1-Wire Connection | 4                | Temperature Sensor: THIS WILL REQUIRE ADDITIONAL STEPS |
 | N/A               | GND (any)        | Temperature Sensor: Ground                             |
@@ -136,6 +147,8 @@ One-Wire Interface needs to be enabled to read the data pin. Do this in the RPi 
 **[Documentation](https://pinout.xyz/pinout/1_wire)** can be found here.
 
 **[Tutorial](https://www.circuitbasics.com/raspberry-pi-ds18b20-temperature-sensor-tutorial/)** can be found here.
+
+![Temp Sensor](./docs/DS18B20%20Temperature%20Sensor%20Tutorial.png)
 
 1. Add to /boot/config.txt
 

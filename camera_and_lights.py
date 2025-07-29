@@ -6,6 +6,7 @@ from picamera2.outputs import FileOutput
 import time
 from datetime import datetime
 
+from temp import read_temp
 from config import SINGLE_RECORDING_TIME, LIGHT_PIN_1, LIGHT_PIN_2
 
 pins = [
@@ -90,12 +91,16 @@ def main():
         setup_pins()
 
         while True:
+            temps = read_temp()
+
             clear_screen()
-            print("What would you like to do?")
+
+            print(f"Current Temperature is {temps[1]}°F ({temps[0]}°C)\n")
+            print("What would you like to do?\n")
             print("1. Take a photo")
             print(f"2. Record a video ({SINGLE_RECORDING_TIME} seconds)")
             print("3. Toggle light (currently: {})".format("ON" if light_is_on else "OFF"))
-            print("4. Exit")
+            print("4. Exit\n")
             choice = input("Enter your choice (1/2/3/4): ").strip()
 
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

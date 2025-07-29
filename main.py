@@ -9,8 +9,8 @@ from logger import write_to_log
 from config import TIME_BETWEEN_LOOP_ITERATIONS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_RECORDING_TIME, LIGHTING_ON, VIDEO_RECORDING_ON, TEMPERATURE_LOGGING_ON, LIGHT_ALWAYS_ON
 from temp import read_temp
 
-LIGHT_1_PIN = 6
-LIGHT_2_PIN = 13
+LIGHT_1_PIN = 17
+LIGHT_2_PIN = 26
 
 video_counter = 0
 recordings_path_str = "none"
