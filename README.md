@@ -42,37 +42,37 @@ Options can be configured in `config.py`.
 
 #### `main.py`
 
-    This runs the main app which takes a video every `{CAMERA_RECORDING_TIME}` seconds.
-
-    **Before running make sure these options are configured!**
-
-        `SAVE_DIRECTORY_PATH` and `LOG_DIRECTORY_PATH` have the correct Pi Name in their directory path.
-
-        `FILENAME_PREFIX` has a descriptor that acurately describes the material being recorded.
-
-##### Config Options
-
-| Option                         | Possible Values                                 | Purpose                                                                                              |
-| :----------------------------- | :---------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
-| `VIDEO_RECORDING_ON`           | True/False                                      | Turn video recording feature on or off                                                               |
-| `CAMERA_RECORDING_TIME`        | Any Number                                      | Seconds that the camera will record if activated                                                     |
-| `TIME_BETWEEN_LOOP_ITERATIONS` | Any Number                                      | Seconds between checks for feature activation (not including the length of the video recording)      |
-| `FILENAME_PREFIX`              | Any String - Do NOT include spaces in the name. | This is will be filename, followed by a number                                                       |
-| `DIRECTORY_NAME_PREFIX`        | Any String                                      | This is the directory name prefix where videos will be stored                                        |
-| `SAVE_DIRECTORY_PATH`          | "/home/[PI NAME]/printer_camera/recordings/"    | The directory where recordings will be stored                                                        |
-| `LIGHTING_ON`                  | True/False                                      | This determines whether the light will turn on WHILE THE CAMERA IS RUNNING                           |
-| `LIGHT_ALWAYS_ON`              | True/ False                                     | This will determine if the light is ALWAYS ON while the program is running EVEN IF THE CAMERA IS NOT |
-| `LOG_DIRECTORY_PATH`           | "/home/[PI NAME]/printer_camera/logs"           | This is the directory name prefix where logs will be stored                                          |
+> This runs the main app which takes a video every `{CAMERA_RECORDING_TIME}` seconds.
+>
+> **Before running make sure these options are configured!**
+>
+> `SAVE_DIRECTORY_PATH` and `LOG_DIRECTORY_PATH` have the correct Pi Name in their directory path.
+>
+> `FILENAME_PREFIX` has a descriptor that acurately describes the material being recorded.
+>
+> ##### Config Options
+>
+> | Option                         | Possible Values                                 | Purpose                                                                                              |
+> | :----------------------------- | :---------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+> | `VIDEO_RECORDING_ON`           | True/False                                      | Turn video recording feature on or off                                                               |
+> | `CAMERA_RECORDING_TIME`        | Any Number                                      | Seconds that the camera will record if activated                                                     |
+> | `TIME_BETWEEN_LOOP_ITERATIONS` | Any Number                                      | Seconds between checks for feature activation (not including the length of the video recording)      |
+> | `FILENAME_PREFIX`              | Any String - Do NOT include spaces in the name. | This is will be filename, followed by a number                                                       |
+> | `DIRECTORY_NAME_PREFIX`        | Any String                                      | This is the directory name prefix where videos will be stored                                        |
+> | `SAVE_DIRECTORY_PATH`          | "/home/[PI NAME]/printer_camera/recordings/"    | The directory where recordings will be stored                                                        |
+> | `LIGHTING_ON`                  | True/False                                      | This determines whether the light will turn on WHILE THE CAMERA IS RUNNING                           |
+> | `LIGHT_ALWAYS_ON`              | True/ False                                     | This will determine if the light is ALWAYS ON while the program is running EVEN IF THE CAMERA IS NOT |
+> | `LOG_DIRECTORY_PATH`           | "/home/[PI NAME]/printer_camera/logs"           | This is the directory name prefix where logs will be stored                                          |
 
 #### `temp.py`
 
 > This program, when run by iteself, will print the current temperature to the console.
 >
 > This module is used in main.py to log the temperature each time the camera records a video.
-
-| Option                   | Possible Values | Purpose                                                     |
-| :----------------------- | :-------------- | :---------------------------------------------------------- |
-| `TEMPERATURE_LOGGING_ON` | True/False      | This determines whether the temperature will be logged when |
+>
+> | Option                   | Possible Values | Purpose                                                     |
+> | :----------------------- | :-------------- | :---------------------------------------------------------- |
+> | `TEMPERATURE_LOGGING_ON` | True/False      | This determines whether the temperature will be logged when |
 
 #### `camera_and_light.py`
 
@@ -83,12 +83,12 @@ Options can be configured in `config.py`.
 > Photos are saved in .jpg format.
 >
 > Videos are stored in .mp4 format (after being converted from .h264)
-
-| Option                  | Possible Values      | Purpose                                               |
-| :---------------------- | :------------------- | :---------------------------------------------------- |
-| `SINGLE_RECORDING_TIME` | Any Number           | The length of the video to be recorded in seconds     |
-| `LIGHT_PIN_1`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
-| `LIGHT_PIN_2`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
+>
+> | Option                  | Possible Values      | Purpose                                               |
+> | :---------------------- | :------------------- | :---------------------------------------------------- |
+> | `SINGLE_RECORDING_TIME` | Any Number           | The length of the video to be recorded in seconds     |
+> | `LIGHT_PIN_1`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
+> | `LIGHT_PIN_2`           | BCM number from GPIO | This pin will be used for an LED to light the chamber |
 
 ## Developer Notes
 
