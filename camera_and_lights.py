@@ -103,9 +103,17 @@ def main():
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
             if choice == "1":
-                capture_photo(f"photo_{timestamp}.jpg")
+                if DISABLE_CAMERA:
+                    print("Camera is currently disabled. Enable DISABLE_CAMERA in config.py")
+                    time.sleep(3)
+                else:
+                    capture_photo(f"photo_{timestamp}.jpg")
             elif choice == "2":
-                capture_video(f"video_{timestamp}", duration=SINGLE_RECORDING_TIME)
+                if DISABLE_CAMERA:
+                    print("Camera is currently disabled. Enable DISABLE_CAMERA in config.py")
+                    time.sleep(3)
+                else:
+                    capture_video(f"video_{timestamp}", duration=SINGLE_RECORDING_TIME)
             elif choice == "3":
                 light_is_on = not light_is_on
                 set_light(light_is_on)
