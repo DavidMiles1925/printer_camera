@@ -5,6 +5,7 @@
 
 TIME_BETWEEN_LOOP_ITERATIONS = 885 # Seconds between checks for feature activation (not including the length of the video recording)
 
+
 ##############################
 ##############################
 #####                    #####
@@ -52,3 +53,13 @@ TEMPERATURE_LOGGING_ON = True
 ##############################
 
 LOG_DIRECTORY_PATH = "/home/pidgey/printer_camera/logs"
+
+
+##############################
+##############################
+#####                    #####
+#####       CAMERA       #####
+#####                    #####
+##############################
+##############################
+

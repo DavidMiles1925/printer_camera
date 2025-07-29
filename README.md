@@ -10,15 +10,27 @@ I have added a temperature sensor to be able to monitor how hot the internals of
 
 The majority of the code as repurposed from the [**motion_camera**](https://github.com/DavidMiles1925/motion_camera) repo. Look there for more detailed documetnation.
 
-### Acceptance Criteria
+### Features
 
-Upon completion the unit will
+- ✅ Turns on a camera on a set interval
+- ✅ Turns on a camera with ad hoc command and/or separate program
+- ✅ Turn on light(s) before recording with the camera (and off after recording)
+- 🟡 Turns on light with ad hoc command and/or separate program
+- ✅ Store videos on SSD to be accessed via SSH
+- ✅ Record temperature in a log to be accessed via SSH
+- 🟡 Fully 3D printed shell
 
-- ✔ Turn on a camera on a set interval
-- ✔ Turn on a camera with ad hoc command
-- ✔ Turn on light(s) before recording with the camera
-- ✔ Store videos on SSD to be accessed via SSH
-- ✔ Record temperature in a log to be accessed via SSH
+### Dependencies:
+
+**picamera2**
+
+- Preinstalled on all Raspberry Pi OS installations
+
+**ffmpeg**
+
+```bash
+sudo apt install -y ffmpeg
+```
 
 ### Config Options
 
@@ -37,7 +49,7 @@ Upon completion the unit will
 
 ### Wiring
 
-DIAGRAM NEEDED
+❌ DIAGRAM NEEDED
 
 ### Pin assignments:
 
@@ -126,12 +138,15 @@ The above steps will need to be completed before the code can be run.
 
 I set up the log function to take `prefix=` argument in order to accomodate the temp log.
 
-### Dependencies:
+## 3D Prints
 
-picamera2
-ffmpeg
+The Version 1 files have been moved to the `/Depricated` folder and will not be used anymore.
+
+The new versions are currently in development.
 
 ## Gallery
+
+Version 1
 
 ![Version 1](./docs/camera_640x480.jpg)
 
