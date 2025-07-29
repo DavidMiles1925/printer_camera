@@ -84,35 +84,40 @@ def capture_video(filename="video", duration=10):
 
 
 def main():
-    global light_is_on  # so we can modify it inside the function
+    try: 
+        global light_is_on  # so we can modify it inside the function
 
-    setup_pins()
+        setup_pins()
 
-    while True:
-        clear_screen()
-        print("What would you like to do?")
-        print("1. Take a photo")
-        print("2. Record a video (10 seconds)")
-        print("3. Toggle light (currently: {})".format("ON" if light_is_on else "OFF"))
-        print("4. Exit")
-        choice = input("Enter your choice (1/2/3/4): ").strip()
+        while True:
+            clear_screen()
+            print("What would you like to do?")
+            print("1. Take a photo")
+            print("2. Record a video (10 seconds)")
+            print("3. Toggle light (currently: {})".format("ON" if light_is_on else "OFF"))
+            print("4. Exit")
+            choice = input("Enter your choice (1/2/3/4): ").strip()
 
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-        if choice == "1":
-            capture_photo(f"photo_{timestamp}.jpg")
-        elif choice == "2":
-            capture_video(f"video_{timestamp}.h264", duration=SINGLE_RECORDING_TIME)
-        elif choice == "3":
-            light_is_on = not light_is_on
-            set_light(light_is_on)
-            time.sleep(1)
-        elif choice == "4":
-            print("Exiting program.")
-            break
-        else:
-            print("Invalid choice. Please enter 1, 2, 3, or 4.\n")
-            time.sleep(2)
+            if choice == "1":
+                capture_photo(f"photo_{timestamp}.jpg")
+            elif choice == "2":
+                capture_video(f"video_{timestamp}", duration=SINGLE_RECORDING_TIME)
+            elif choice == "3":
+                light_is_on = not light_is_on
+                set_light(light_is_on)
+                time.sleep(1)
+            elif choice == "4":
+                print("Exiting program.")
+                GPIO.cleanup()
+                break
+            else:
+                print("Invalid choice. Please enter 1, 2, 3, or 4.\n")
+                time.sleep(2)
+    except Exception as e:
+        print ("A top-level exception occured.")
+        print(e.with_traceback)
 
 
 if __name__ == "__main__":
