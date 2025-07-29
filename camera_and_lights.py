@@ -52,6 +52,7 @@ def capture_photo(filename="photo.jpg"):
     picam2.capture_file(filepath)
     picam2.stop()
     print("Photo saved.\n")
+    time.sleep(2)
 
 def capture_video(filename="video", duration=10):
     h264_path = os.path.join(VIDEO_DIR, f"{filename}.h264")
@@ -76,6 +77,7 @@ def capture_video(filename="video", duration=10):
     os.remove(h264_path)
 
     print(f"Video saved to {mp4_path}\n")
+    time.sleep(2)
 
 
 def main():
