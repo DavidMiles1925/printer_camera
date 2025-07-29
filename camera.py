@@ -1,7 +1,11 @@
 import os
 from picamera2 import Picamera2
+from picamera2.encoders import H264Encoder
+from picamera2.outputs import FileOutput
 import time
 from datetime import datetime
+
+from config import SINGLE_RECORDING_TIME
 
 # Initialize camera
 picam2 = Picamera2()
@@ -22,16 +26,18 @@ def capture_photo(filename="photo.jpg"):
     picam2.stop()
     print("Photo saved.\n")
 
-def capture_video(filename="video.mp4", duration=10):
+def capture_video(filename="video.h264", duration=10):
     print(f"Recording video: {filename} for {duration} seconds")
-
+    
+    # Configure camera for video
     config = picam2.create_video_configuration()
     picam2.configure(config)
-    
-    picam2.start_recording(filename)
 
+    encoder = H264Encoder()
+    output = FileOutput(filename)
+
+    picam2.start_recording(encoder, output)
     time.sleep(duration)
-
     picam2.stop_recording()
     print("Video saved.\n")
 
@@ -48,7 +54,7 @@ def main():
         if choice == "1":
             capture_photo(f"photo_{timestamp}.jpg")
         elif choice == "2":
-            capture_video(f"video_{timestamp}.mp4", duration=10)
+            capture_video(f"video_{timestamp}.mp4", duration=SINGLE_RECORDING_TIME)
         elif choice == "3":
             print("Exiting program.")
             break

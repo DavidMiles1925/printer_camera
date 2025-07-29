@@ -63,3 +63,4 @@ LOG_DIRECTORY_PATH = "/home/pidgey/printer_camera/logs"
 ##############################
 ##############################
 
+SINGLE_RECORDING_TIME = 5

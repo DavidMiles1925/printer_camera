@@ -22,11 +22,15 @@ The majority of the code as repurposed from the [**motion_camera**](https://gith
 
 ### Dependencies:
 
-**picamera2**
+**Note: These _MUST_ be installed prior to using this software.**
 
-- Preinstalled on all Raspberry Pi OS installations
+#### picamera2
 
-**ffmpeg**
+```bash
+sudo apt install -y python3-picamera2
+```
+
+#### ffmpeg
 
 ```bash
 sudo apt install -y ffmpeg
@@ -46,6 +50,7 @@ sudo apt install -y ffmpeg
 | `LIGHT_ALWAYS_ON`              | True/ False                                     | This will determine if the light is ALWAYS ON while the program is running EVEN IF THE CAMERA IS NOT |
 | `TEMPERATURE_LOGGING_ON`       | True/False                                      | This determines whether the temperature will be logged when                                          |
 | `LOG_DIRECTORY_PATH`           | "/home/[PI NAME]/printer_camera/logs"           | This is the directory name prefix where logs will be stored                                          |
+| `SINGLE_RECORDING_TIME`        | Any Number                                      | CAMERA UTILITY: The length of the video to be recorded in seconds                                    |
 
 ### Wiring
 
@@ -66,9 +71,15 @@ sudo apt install -y ffmpeg
 
 ### Camera
 
-- You will need to ensure picamera2 is installed on your machine.
+#### Camera Installation
 
-- I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation to avoid duplication of efforts.
+- You will need to ensure picamera2 is installed on your machine. (see Dependencies above)
+
+- I have documented the setup of the camera extensively in the [**Motion Camera Repo**](https://github.com/DavidMiles1925/motion_camera). Refer to this documentation for more information.
+
+- Ensure the camera is installed (in the RPI Zero 2 W) with the gold traces facing the board ("face-down")
+
+❌ Picture Needed
 
 ### Temperature Sensor: DS18B20
 
@@ -172,3 +183,53 @@ scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/logs/ /c/users/USER_NA
 
 **Calibration Model and Tutorial from Ameralabs**  
 [Calibration Tutorial](https://ameralabs.com/blog/town-calibration-part/)
+
+## Troubleshooting
+
+### Camera
+
+#### IndexError: list index out of range
+
+means that picamera2 checked for attached cameras but found an empty list.
+
+1. Check physical connection
+
+- Is the camera ribbon cable firmly seated in the CSI port?
+
+- Make sure it's facing the correct direction (metal pins face the camera connector contacts).
+
+- Try reseating the cable on both ends (Pi and camera).
+
+2. Make sure the camera is enabled
+
+Even if you already ran this, double-check:
+
+```bash
+sudo raspi-config
+```
+
+- Go to: Interface Options → Camera → Enable
+
+#### TypeError: Picamera2.start_recording() missing 1 required positional argument: 'output'
+
+The start_recording() method in picamera2 requires two arguments:
+
+`picam2.start_recording(output, encoder)`
+
+You're currently just passing the filename (filename), but it's expecting a file encoder and a file-like output.
+
+#### 🧪 Test It
+
+After reboot:
+
+libcamera-hello
+
+If it still fails:
+
+    Double-check that your cable is for the Pi Zero (not the wide one for full-size Pis).
+
+    Make sure the camera module itself is firmly connected and supported by the OS.
+
+    Run:
+
+libcamera-still --list-cameras
