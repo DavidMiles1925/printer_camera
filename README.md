@@ -15,6 +15,7 @@ I have added a temperature sensor to be able to monitor how hot the internals of
     ✅ Store videos on SSD to be accessed via SSH
     ✅ Record temperature in a log to be accessed via SSH
     🟡 Fully 3D printed shell
+    ✅ A script to run on Windows machine for downloading files from the RPi
 
 ## Using the Software
 
