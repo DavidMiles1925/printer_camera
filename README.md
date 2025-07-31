@@ -115,13 +115,21 @@ Options can be configured in `config.py`.
 >
 > You **_MUST_** have set up an SSK Key. [**Documentation for SSH Key Setup Here**](https://github.com/DavidMiles1925/pi_zero_setup#set-up-ssh-key-to-eliminate-need-for-password)
 >
-> | Option              | Possible Values | Purpose                                               |
-> | :------------------ | :-------------- | :---------------------------------------------------- |
-> | `REMOTE_HOST`       | RPi IP Address  | The length of the video to be recorded in seconds     |
-> | `USERNAME`          | RPi Username    | This pin will be used for an LED to light the chamber |
-> | `REMOTE_PATH_PHOTO` | File Path       | Path to grab photo files from                         |
-> | `REMOTE_PATH_VIDEO` | File Path       | Path to grab video files from                         |
-> | `LOCAL_PATH`        | File path       | Path where files will be downloaded                   |
+> | Option              | Possible Values  | Purpose                                           |
+> | :------------------ | :--------------- | :------------------------------------------------ |
+> | `REMOTE_HOST`       | RPi IP Address   | The length of the video to be recorded in seconds |
+> | `PI_USERNAME`       | RPi Username     | The username of the RPi                           |
+> | `WIN_USERNAME`      | Windows Username | The username of the Windows account pulling files |
+> | `REMOTE_PATH_PHOTO` | File Path        | Path to grab photo files from                     |
+> | `REMOTE_PATH_VIDEO` | File Path        | Path to grab video files from                     |
+> | `LOCAL_PATH`        | File path        | Path where files will be downloaded               |
+>
+> **Manual Copy/Paste commands to pull videos.**
+>
+> ```bash
+> scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/recordings/ /c/users/USER_NAME/downloads
+> scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/logs/ /c/users/USER_NAME/downloads
+> ```
 
 ---
 
@@ -170,6 +178,8 @@ The majority of the original code as repurposed from the [**motion_camera**](htt
 > Ensure the camera is installed (in the RPI Zero 2 W) with the gold traces facing the board ("face-down").
 >
 > The side of the camera with the cable running in is the bottom of the camera.
+>
+> The RPi must be booted with the camera attached. If it is attached afterwards, the program will throw an error.
 
 ![Camera Traces](./docs/camera_traces.jpg)
 
@@ -256,15 +266,6 @@ The new versions are currently in development.
 Version 1
 
 ![Version 1](./docs/camera_640x480.jpg)
-
-#### Quick Copy/Paste Commands
-
-**Pull Videos and Logs from Pi**
-
-```bash
-scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/recordings/ /c/users/USER_NAME/downloads
-scp -r PI_NAME@192.168.1.000:/home/PI_NAME/printer_camera/logs/ /c/users/USER_NAME/downloads
-```
 
 #### Other Documentaion Links
 
