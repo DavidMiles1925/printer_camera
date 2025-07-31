@@ -118,7 +118,7 @@ Options can be configured in `config.py`.
 >
 > | Option              | Possible Values  | Purpose                                           |
 > | :------------------ | :--------------- | :------------------------------------------------ |
-> | `REMOTE_HOST`       | RPi IP Address   | The length of the video to be recorded in seconds |
+> | `REMOTE_HOST`       | RPi IP Address   | The IP address of the RPi for ssh connection      |
 > | `PI_USERNAME`       | RPi Username     | The username of the RPi                           |
 > | `WIN_USERNAME`      | Windows Username | The username of the Windows account pulling files |
 > | `REMOTE_PATH_PHOTO` | File Path        | Path to grab photo files from                     |

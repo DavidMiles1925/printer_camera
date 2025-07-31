@@ -25,8 +25,10 @@ def fetch_files():
 
         with SCPClient(ssh.get_transport(), progress=progress) as scp:
             print(f"Fetching files...")
-            scp.get(REMOTE_PATH_PHOTO, LOCAL_PATH, recursive=True)
-            scp.get(REMOTE_PATH_VIDEO, LOCAL_PATH, recursive=True)
+            if REMOTE_PATH_PHOTO:
+                scp.get(REMOTE_PATH_PHOTO, LOCAL_PATH, recursive=True)
+            if REMOTE_PATH_VIDEO:
+                scp.get(REMOTE_PATH_VIDEO, LOCAL_PATH, recursive=True)
 
         ssh.close()
         print(f"\n\nDone! Files copied to {LOCAL_PATH}")
