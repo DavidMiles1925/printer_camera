@@ -29,6 +29,7 @@ def setup_pins():
 
     for pin in pins:
         GPIO.setup(pin, GPIO.OUT)
+        GPIO.output(pin, GPIO.LOW)
 
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")

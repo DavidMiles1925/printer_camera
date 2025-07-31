@@ -79,7 +79,7 @@ DISABLE_CAMERA = False
 
 REMOTE_HOST = "192.168.1.161"
 PI_USERNAME = "pidgey"
-WIN_USERNAME = "David"
+WIN_USERNAME = "astro"
 
 REMOTE_PATH_PHOTO = f"/home/{PI_USERNAME}/printer_camera/photos/"
 REMOTE_PATH_VIDEO = f"/home/{PI_USERNAME}/printer_camera/recordings/"
