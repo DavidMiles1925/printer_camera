@@ -1,10 +1,12 @@
 # This file is only to be used from a windows machine that has been paired with a Pi via SSH Key
 
 from scp import SCPClient
+from scp import SCPException
 from time import sleep
 
 try:
     from paramiko import SSHClient, AutoAddPolicy
+    from paramiko.ssh_exception import AuthenticationException
 except:
     print("\nparmiko not installed\n")
     pass
@@ -47,8 +49,8 @@ if __name__ == "__main__":
         print(e)
         print("\n\n")
         print("HOW TO SOLVE:")
-        print("If 'paramiko not installed' is displayed above, run this command:\n\n")
-        print("pip install paramiko\n\n")
+        print("If 'paramiko not installed' is displayed above, run this command:\n")
+        print("pip install paramiko\n")
         print("Press any key...")
         input()
 
@@ -58,7 +60,7 @@ if __name__ == "__main__":
         print(e)
         print("\n\n")
         print("HOW TO SOLVE:")
-        print("Please configure WIN_USERNAME in the config.py file.")
+        print("Configure WIN_USERNAME in the config.py file.\n")
         print("Press any key...")
         input()
 
@@ -67,19 +69,35 @@ if __name__ == "__main__":
         print(e)
         print("\n\n")
         print("HOW TO SOLVE:")
-        print("Please check REMOTE_HOST in the config.py file.")
         print("Please check that the device is turned on.")
+        print("Check REMOTE_HOST in the config.py file.\n")
+        print("Press any key...")
+        input()
+
+    except SCPException as e:
+        print(e.__class__)
+        print(e)
+        print("\n\n")
+        print("HOW TO SOLVE:")
+        print("If 'No such file or directory' is displayed above...")
+        print("    Check that the file paths in config.py are correct.")
+        print("    Check the file path exists.\n")
+        print("Otherwise, retry running program. This error can be caused by a dropped connection.\n")
+        print("Press any key...")
+        input()
+
+    except AuthenticationException as e:
+        print(e.__class__)
+        print(e)
+        print("\n\n")
+        print("HOW TO SOLVE:")
+        print("Please configure PI_USERNAME in the config.py file.\n")
         print("Press any key...")
         input()
 
     except Exception as e:
-        print(e)
         print(e.__class__)
-
-        if str(e) == "Authentication failed.":
-            print("\n\n")
-            print("HOW TO SOLVE:")
-            print("Please configure PI_USERNAME in the config.py file.")
-
+        print(e)
+        print("\n\n")
         print("Press any key...")
         input()
