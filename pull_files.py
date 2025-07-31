@@ -1,6 +1,5 @@
 # This file is only to be used from a windows machine that has been paired with a Pi via SSH Key
 
-import os
 from scp import SCPClient
 from time import sleep
 
