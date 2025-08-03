@@ -7,7 +7,7 @@ from time import sleep
 from logger import write_to_log
 
 from config import TIME_BETWEEN_LOOP_ITERATIONS, FILENAME_PREFIX, DIRECTORY_NAME_PREFIX, SAVE_DIRECTORY_PATH, CAMERA_RECORDING_TIME, LIGHTING_ON, VIDEO_RECORDING_ON, TEMPERATURE_LOGGING_ON, LIGHT_ALWAYS_ON
-from temp import read_temp
+from temp import read_temp, construct_temp_string
 
 LIGHT_1_PIN = 17
 LIGHT_2_PIN = 26
@@ -33,11 +33,6 @@ def add_zeros_to_number(num, amt):
     else:
         return num_str
     
-def construct_temp_string():
-    temps = read_temp()
-    temp_string = f"C:  {temps[0]}    F:  {temps[1]}"
-    return temp_string
-
 def setup_pins():
     GPIO.setmode(GPIO.BCM)
 

@@ -1,6 +1,9 @@
 import os
 import glob
 import time
+
+from logger import write_to_log
+from config import TEMP_LOG_TIME
  
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
@@ -8,6 +11,11 @@ os.system('modprobe w1-therm')
 base_dir = '/sys/bus/w1/devices/'
 device_folder = glob.glob(base_dir + '28*')[0]
 device_file = device_folder + '/w1_slave'
+
+def construct_temp_string():
+    temps = read_temp()
+    temp_string = f"C:  {temps[0]}    F:  {temps[1]}"
+    return temp_string
  
 def read_temp_raw():
     f = open(device_file, 'r')
@@ -30,5 +38,7 @@ def read_temp():
 
 if __name__ == "__main__":
     while True:
-        print(read_temp())	
-        time.sleep(1)
+        temp_string = construct_temp_string()
+        print(temp_string)
+        write_to_log(temp_string, "Tempertaure log")
+        time.sleep(TEMP_LOG_TIME)

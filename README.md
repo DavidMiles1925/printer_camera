@@ -89,9 +89,10 @@ Options can be configured in `config.py`.
 >
 > This module is used in main.py to log the temperature each time the camera records a video.
 >
-> | Option                   | Possible Values | Purpose                                                     |
-> | :----------------------- | :-------------- | :---------------------------------------------------------- |
-> | `TEMPERATURE_LOGGING_ON` | True/False      | This determines whether the temperature will be logged when |
+> | Option                   | Possible Values | Purpose                                                                       |
+> | :----------------------- | :-------------- | :---------------------------------------------------------------------------- |
+> | `TEMPERATURE_LOGGING_ON` | True/False      | This determines whether the temperature will be logged when `main.py` is run. |
+> | `TEMP_LOG_TIME_`         | Any Number      | The amount of time in seconds between logging when **`temp.py`** is run       |
 
 #### `camera_and_light.py`
 

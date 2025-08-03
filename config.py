@@ -42,6 +42,7 @@ LIGHT_ALWAYS_ON = True
 ##############################
 
 TEMPERATURE_LOGGING_ON = True
+TEMP_LOG_TIME = 5
 
 
 ##############################

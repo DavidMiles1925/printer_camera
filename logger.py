@@ -2,8 +2,13 @@ from datetime import datetime
 import os
 from config import LOG_DIRECTORY_PATH
 
-def write_to_log(message, prefix=""):
-    datestamp = datetime.now().strftime("%a%d")
+def write_to_log(message, prefix="", print_datestamp=True):
+
+    if print_datestamp:
+        datestamp = datetime.now().strftime("%a%d")
+    else:
+        datestamp = ""
+        
     timestamp = datetime.now().strftime("%H.%M.%S")
 
     fname = f"{prefix}{datestamp}-log.txt"
