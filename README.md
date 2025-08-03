@@ -14,7 +14,7 @@ I have added a temperature sensor to be able to monitor how hot the internals of
     ✅ Turns on light with ad hoc command and/or separate program
     ✅ Store videos on SSD to be accessed via SSH
     ✅ Record temperature in a log to be accessed via SSH
-    🟡 Fully 3D printed shell
+    ✅ Fully 3D printed shell
     ✅ A script to run on Windows machine for downloading files from the RPi
 
 ## Using the Software
@@ -261,7 +261,9 @@ I set up the log function to take `prefix=` argument in order to accomodate the 
 
 The Version 1 files have been moved to the `/Depricated` folder and will not be used anymore.
 
-The new versions are currently in development.
+Files are located in the `print_files` folder above. The Pi piece and the breadboard piece were glued back-to-back and installed in the fan port on the cover for the Mars 5 Ultra.
+
+![Mars 5 Ultra]()
 
 ## Gallery
 

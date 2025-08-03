@@ -11,7 +11,7 @@ def write_to_log(message, prefix="", print_datestamp=True):
         
     timestamp = datetime.now().strftime("%H.%M.%S")
 
-    fname = f"{prefix}{datestamp}-log.txt"
+    fname = f"{prefix}-{datestamp}-log.txt"
 
     path_str = f"{LOG_DIRECTORY_PATH}"
 
