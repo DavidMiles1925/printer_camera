@@ -263,13 +263,23 @@ The Version 1 files have been moved to the `/Depricated` folder and will not be 
 
 Files are located in the `print_files` folder above. The Pi piece and the breadboard piece were glued back-to-back and installed in the fan port on the cover for the Mars 5 Ultra.
 
-![Mars 5 Ultra]()
+![Mars 5 Ultra](./docs/Printer_cam.jpg)
+
+![Mars 5 Ultra](./docs/Printer_cam_interior.jpg)
 
 ## Gallery
 
 Version 1
 
 ![Version 1](./docs/camera_640x480.jpg)
+
+Version 2
+
+![Version 2 Side](./docs/Printer_cam_covered.jpg)
+
+![Version 2 Back](./docs/printer_cam_back.jpg)
+
+1[Version 2 Interior](./docs/printer_cam_interior_covered.jpg)
 
 #### Other Documentaion Links
 
