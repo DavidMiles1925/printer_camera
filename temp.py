@@ -41,7 +41,7 @@ if __name__ == "__main__":
         while True:
             temp_string = construct_temp_string()
             print(temp_string)
-            write_to_log(temp_string, "Tempertaure_Log-", False)
+            write_to_log(temp_string, "Tempertaure_Log")
             time.sleep(TEMP_LOG_TIME)
 
     except KeyboardInterrupt as e:
