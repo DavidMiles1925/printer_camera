@@ -4,7 +4,9 @@
 
 This project was conceived because I have a resin 3D printer that I want to run outside. Because the printer is outside, I need to leave it blocked from sunlight. Therefore, I cannot check on the print by lifting the lid (at least not during the daytime).
 
-I have added a temperature sensor to be able to monitor how hot the internals of the printer may be getting. See the developer notes below.
+The project has now been through 2 interations; once with my Creality LD-002H and again with my Elegoo Mars 5 Ultra.
+
+![Version 2](./docs/Printer_cam_covered.jpg)
 
 ### Features
 
@@ -274,8 +276,6 @@ Version 1
 ![Version 1](./docs/camera_640x480.jpg)
 
 Version 2
-
-![Version 2 Side](./docs/Printer_cam_covered.jpg)
 
 ![Version 2 Back](./docs/printer_cam_back.jpg)
 
