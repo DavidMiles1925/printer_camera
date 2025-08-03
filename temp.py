@@ -37,8 +37,15 @@ def read_temp():
 
 
 if __name__ == "__main__":
-    while True:
-        temp_string = construct_temp_string()
-        print(temp_string)
-        write_to_log(temp_string, "Tempertaure log")
-        time.sleep(TEMP_LOG_TIME)
+    try:
+        while True:
+            temp_string = construct_temp_string()
+            print(temp_string)
+            write_to_log(temp_string, "Tempertaure_Log-", False)
+            time.sleep(TEMP_LOG_TIME)
+
+    except KeyboardInterrupt as e:
+        print("Program was stopped with Ctrl+C")
+
+    except Exception as e:
+        print(e)
