@@ -14,7 +14,7 @@ device_file = device_folder + '/w1_slave'
 
 def construct_temp_string():
     temps = read_temp()
-    temp_string = f"C:  {temps[0]}    F:  {temps[1]}"
+    temp_string = f"C:  {round(temps[0], 2)}    F:  {round(temps[1], 2)}"
     return temp_string
  
 def read_temp_raw():
