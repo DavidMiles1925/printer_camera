@@ -279,18 +279,21 @@ Version 2
 
 ![Version 2 Back](./docs/printer_cam_back.jpg)
 
-1[Version 2 Interior](./docs/printer_cam_interior_covered.jpg)
+![Version 2 Interior](./docs/printer_cam_interior_covered.jpg)
 
 #### Other Documentaion Links
 
 **My article on printing outdoors**  
-[Article - Outdoor Resin Printinig](https://www.crealitycloud.com/post-detail/670402b9c42fe1d59f494f52)
+[Article - Outdoor Resin Printinig](https://www.crealitycloud.com/post-detail/66e5a9818b2f34a688458715)
 
 **My YouTube video showing outdoor printing**  
 [Video - Outdoor Resin Printing](https://youtu.be/wVPIBC5VqVw)
 
-**Resin Settings from Maker Trainer**  
+**Resin Settings from Maker Trainer (for LD-002H)**  
 [LD-002H Resin Settings Spreadsheet](https://makertrainer.com/wiki/Creality_LD-002H_resin_settings)
+
+**Resin Settings from Elegoo (for Mars 5 Ultra)**
+![Elegoo Resin Settings](https://www.elegoo.com/blogs/3d-printer-user-guide/elegoo-printers-resin-setting-sheet)
 
 **Calibration Model and Tutorial from Ameralabs**  
 [Calibration Tutorial](https://ameralabs.com/blog/town-calibration-part/)
