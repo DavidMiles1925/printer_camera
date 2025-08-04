@@ -292,7 +292,7 @@ Version 2
 **Resin Settings from Maker Trainer (for LD-002H)**  
 [LD-002H Resin Settings Spreadsheet](https://makertrainer.com/wiki/Creality_LD-002H_resin_settings)
 
-**Resin Settings from Elegoo (for Mars 5 Ultra)**
+**Resin Settings from Elegoo (for Mars 5 Ultra)**  
 ![Elegoo Resin Settings](https://www.elegoo.com/blogs/3d-printer-user-guide/elegoo-printers-resin-setting-sheet)
 
 **Calibration Model and Tutorial from Ameralabs**  
