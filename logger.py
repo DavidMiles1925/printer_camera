@@ -21,11 +21,11 @@ def write_to_log(message, prefix="", print_datestamp=True):
     os.chdir(path_str)
     if os.path.exists(fname):
         fout = open(fname, 'a')
-        fout.write(f"{timestamp}:   ")
+        fout.write(f"{datestamp} - {timestamp}:   ")
         fout.write(f"{message}\n\n")
     else:
         fout = open(fname, 'w')
-        fout.write(f"{timestamp}:   ")
+        fout.write(f"{datestamp} - {timestamp}:   ")
         fout.write(f"{message}\n\n")
 
     fout.close()
