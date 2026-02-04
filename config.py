@@ -78,7 +78,7 @@ DISABLE_CAMERA = True
 ##############################
 ##############################
 
-REMOTE_HOST = "192.168.1.161"
+REMOTE_HOST = "192.168.0.222"
 PI_USERNAME = "pidgey"
 WIN_USERNAME = "astro"
 

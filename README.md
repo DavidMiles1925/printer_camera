@@ -87,7 +87,7 @@ Options can be configured in `config.py`.
 
 #### `temp.py`
 
-> This program, when run by iteself, will print the current temperature to the console intermitently.
+> This program, when run by iteself, will log the current temperature and print it to the console intermitently.
 >
 > This module is used in main.py to log the temperature each time the camera records a video.
 >
